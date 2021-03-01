@@ -10,14 +10,14 @@ var simplemaps_usmap_mapdata={
     hide_labels: "no",
     border_color: "white",
     state_description: "",
-    state_color: "#F7F4D3",
+    state_color: "#FC443C",
     state_hover_color: "#FE764C",
     state_url: "",
     all_states_inactive: "no",
     
     //Location defaults
     location_description: "Field Office",
-    location_color: "#ff46a2",
+    location_color: "#FBF9E8",
     location_pulse: "yes",
     location_pulse_size: "3",
     location_opacity: ".8",
