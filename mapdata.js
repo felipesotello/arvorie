@@ -11,7 +11,7 @@ var simplemaps_usmap_mapdata={
     border_color: "white",
     state_description: "",
     state_color: "#FBF9E8",
-    state_hover_color: "#FC443C",
+    state_hover_color: "#BFEF9B",
     state_url: "",
     all_states_inactive: "no",
     
@@ -39,7 +39,7 @@ var simplemaps_usmap_mapdata={
     state_image_url: "",
     state_image_position: "",
     location_image_url: "",
-    label_hover_color: "white",
+    label_hover_color: "#FC443C",
     label_size: "20px",
     label_font: "DM Sans",
     popups: "detect",
