@@ -17,7 +17,7 @@ var simplemaps_usmap_mapdata={
     
     //Location defaults
     location_description: "Field Office",
-    location_color: "#FBF9E8",
+    location_color: "fuchsia",
     location_pulse: "yes",
     location_pulse_size: "3",
     location_opacity: ".8",
