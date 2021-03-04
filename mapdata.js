@@ -6,11 +6,11 @@ var simplemaps_usmap_mapdata={
     background_transparent: "yes",
     
     //Label defaults
-    label_color: "#FC443C",
+    label_color: "#707070",
     hide_labels: "no",
     border_color: "white",
     state_description: "",
-    state_color: "#157ddf",
+    state_color: "#89bdef",
     state_hover_color: "#BFEF9B",
     state_url: "",
     all_states_inactive: "no",
