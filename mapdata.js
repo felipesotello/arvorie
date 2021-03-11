@@ -32,8 +32,8 @@ var simplemaps_usmap_mapdata={
     //Label defaults
     label_color: "transparent",
     label_hover_color: "transparent",
-    label_size: 22,
-    label_font: "Arial",
+    label_size: "20",
+    label_font: "'DM Sans', sans-serif",
     hide_labels: "no",
     hide_eastern_labels: "no",
     manual_zoom: "no",
@@ -71,211 +71,267 @@ var simplemaps_usmap_mapdata={
   },
   state_specific: {
     HI: {
-      name: "Hawaii"
+      name: "Hawaii",
+      url: "/hawaii"
     },
     AK: {
-      name: "Alaska"
+      name: "Alaska",
+      url: "/alaska"
     },
     FL: {
-      name: "Florida"
+      name: "Florida",
+      url: "/florida"
     },
     NH: {
-      name: "New Hampshire"
+      name: "New Hampshire",
+      url: "/new-hampshire"
     },
     VT: {
-      name: "Vermont"
+      name: "Vermont",
+      url: "/vermont"
     },
     ME: {
-      name: "Maine"
+      name: "Maine",
+      url: "/maine"
     },
     RI: {
       name: "Rhode Island",
       color: "#4C603E",
-      hover_color: "#4C603E"
+      hover_color: "#4C603E",
+      url: "/rhode-island"
     },
     NY: {
       name: "New York",
       color: "#4C603E",
-      hover_color: "#4C603E"
+      hover_color: "#4C603E",
+      url: "/new-york"
     },
     PA: {
-      name: "Pennsylvania"
+      name: "Pennsylvania",
+      url: "/pennsylvania"
     },
     NJ: {
-      name: "New Jersey"
+      name: "New Jersey",
+      url: "/new-jersey"
     },
     DE: {
-      name: "Delaware"
+      name: "Delaware",
+      url: "/delaware"
     },
     MD: {
       name: "Maryland",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/maryland"
     },
     VA: {
       name: "Virginia",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/virginia"
     },
     WV: {
-      name: "West Virginia"
+      name: "West Virginia",
+      url: "/west-virginia"
     },
     OH: {
-      name: "Ohio"
+      name: "Ohio",
+      url: "/ohio"
     },
     IN: {
-      name: "Indiana"
+      name: "Indiana",
+      url: "/indiana"
     },
     IL: {
       name: "Illinois",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/illinois"
     },
     CT: {
       name: "Connecticut",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/connecticut"
     },
     WI: {
-      name: "Wisconsin"
+      name: "Wisconsin",
+      url: "/wisconsin"
     },
     NC: {
-      name: "North Carolina"
+      name: "North Carolina",
+      url: "/north-carolina"
     },
     DC: {
-      name: "District of Columbia"
+      name: "District of Columbia",
+      url: "/district-of-columbia"
     },
     MA: {
-      name: "Massachusetts"
+      name: "Massachusetts",
+      url: "/massachusetts"
     },
     TN: {
-      name: "Tennessee"
+      name: "Tennessee",
+      url: "/tennessee"
     },
     AR: {
       name: "Arkansas",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/arkansas"
     },
     MO: {
-      name: "Missouri"
+      name: "Missouri",
+      url: "/missouri"
     },
     GA: {
       name: "Georgia",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/georgia"
     },
     SC: {
       name: "South Carolina",
       color: "#4C603E",
-      hover_color: "#4C603E"
+      hover_color: "#4C603E",
+      url: "/south-carolina"
     },
     KY: {
-      name: "Kentucky"
+      name: "Kentucky",
+      url: "/kentucky"
     },
     AL: {
-      name: "Alabama"
+      name: "Alabama",
+      url: "/alabama"
     },
     LA: {
       name: "Louisiana",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/louisiana"
     },
     MS: {
       name: "Mississippi",
       color: "#4C603E",
-      hover_color: "#4C603E"
+      hover_color: "#4C603E",
+      url: "/mississippi"
     },
     IA: {
-      name: "Iowa"
+      name: "Iowa",
+      url: "/iowa"
     },
     MN: {
-      name: "Minnesota"
+      name: "Minnesota",
+      url: "/minnesota"
     },
     OK: {
-      name: "Oklahoma"
+      name: "Oklahoma",
+      url: "/oklahoma"
     },
     TX: {
-      name: "Texas"
+      name: "Texas",
+      url: "/texas"
     },
     NM: {
       name: "New Mexico",
       color: "#4C603E",
-      hover_color: "#4C603E"
+      hover_color: "#4C603E",
+      url: "/new-mexico"
     },
     KS: {
       name: "Kansas",
       color: "#4C603E",
-      hover_color: "#4C603E"
+      hover_color: "#4C603E",
+      url: "/kansas"
     },
     NE: {
       name: "Nebraska",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/nebraska"
     },
     SD: {
-      name: "South Dakota"
+      name: "South Dakota",
+      url: "/south-dakota"
     },
     ND: {
-      name: "North Dakota"
+      name: "North Dakota",
+      url: "/north-dakota"
     },
     WY: {
-      name: "Wyoming"
+      name: "Wyoming",
+      url: "/wyoming"
     },
     MT: {
       name: "Montana",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/montana"
     },
     CO: {
       name: "Colorado",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/colorado"
     },
     UT: {
-      name: "Utah"
+      name: "Utah",
+      url: "/utah"
     },
     AZ: {
-      name: "Arizona"
+      name: "Arizona",
+      url: "/arizona"
     },
     NV: {
-      name: "Nevada"
+      name: "Nevada",
+      url: "/nevada"
     },
     OR: {
       name: "Oregon",
       color: "#738F5D",
-      hover_color: "#738F5D"
+      hover_color: "#738F5D",
+      url: "/oregon"
     },
     WA: {
-      name: "Washington"
+      name: "Washington",
+      url: "/washington"
     },
     CA: {
-      name: "California"
+      name: "California",
+      url: "/california"
     },
     MI: {
-      name: "Michigan"
+      name: "Michigan",
+      url: "/michigan"
     },
     ID: {
-      name: "Idaho"
+      name: "Idaho",
+      url: "/idaho"
     },
     GU: {
       name: "Guam",
-      hide: "yes"
+      hide: "yes",
+      url: "/guam"
     },
     VI: {
       name: "Virgin Islands",
-      hide: "yes"
+      hide: "yes",
+      url: "/virgin-islands"
     },
     PR: {
       name: "Puerto Rico",
-      hide: "yes"
+      hide: "yes",
+      url: "/puerto-rico"
     },
     MP: {
       name: "Northern Mariana Islands",
-      hide: "yes"
+      hide: "yes",
+      url: "/northern-mariana-islands"
     },
     AS: {
       name: "American Samoa",
-      hide: "yes"
+      hide: "yes",
+      url: "/american-samoa"
     }
   },
   locations: {},
