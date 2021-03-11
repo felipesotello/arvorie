@@ -52,7 +52,7 @@ var simplemaps_usmap_mapdata={
     popup_opacity: 1,
     popup_shadow: 1,
     popup_corners: 4,
-    popup_font: "16px/1.2 'DM Sans', sans-serif",
+    popup_font: "12px/1.5 white",
     popup_nocss: "no",
     
     //Advanced settings
