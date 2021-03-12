@@ -72,266 +72,266 @@ var simplemaps_usmap_mapdata={
   state_specific: {
     HI: {
       name: "Hawaii",
-      url: "/hawaii"
+      url: "/tax-incentives/hawaii"
     },
     AK: {
       name: "Alaska",
-      url: "/alaska"
+      url: "/tax-incentives/alaska"
     },
     FL: {
       name: "Florida",
-      url: "/florida"
+      url: "/tax-incentives/florida"
     },
     NH: {
       name: "New Hampshire",
-      url: "/new-hampshire"
+      url: "/tax-incentives/new-hampshire"
     },
     VT: {
       name: "Vermont",
-      url: "/vermont"
+      url: "/tax-incentives/vermont"
     },
     ME: {
       name: "Maine",
-      url: "/maine"
+      url: "/tax-incentives/maine"
     },
     RI: {
       name: "Rhode Island",
       color: "#4C603E",
       hover_color: "#4C603E",
-      url: "/rhode-island"
+      url: "/tax-incentives/rhode-island"
     },
     NY: {
       name: "New York",
       color: "#4C603E",
       hover_color: "#4C603E",
-      url: "/new-york"
+      url: "/tax-incentives/new-york"
     },
     PA: {
       name: "Pennsylvania",
-      url: "/pennsylvania"
+      url: "/tax-incentives/pennsylvania"
     },
     NJ: {
       name: "New Jersey",
-      url: "/new-jersey"
+      url: "/tax-incentives/new-jersey"
     },
     DE: {
       name: "Delaware",
-      url: "/delaware"
+      url: "/tax-incentives/delaware"
     },
     MD: {
       name: "Maryland",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/maryland"
+      url: "/tax-incentives/maryland"
     },
     VA: {
       name: "Virginia",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/virginia"
+      url: "/tax-incentives/virginia"
     },
     WV: {
       name: "West Virginia",
-      url: "/west-virginia"
+      url: "/tax-incentives/west-virginia"
     },
     OH: {
       name: "Ohio",
-      url: "/ohio"
+      url: "/tax-incentives/ohio"
     },
     IN: {
       name: "Indiana",
-      url: "/indiana"
+      url: "/tax-incentives/indiana"
     },
     IL: {
       name: "Illinois",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/illinois"
+      url: "/tax-incentives/illinois"
     },
     CT: {
       name: "Connecticut",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/connecticut"
+      url: "/tax-incentives/connecticut"
     },
     WI: {
       name: "Wisconsin",
-      url: "/wisconsin"
+      url: "/tax-incentives/wisconsin"
     },
     NC: {
       name: "North Carolina",
-      url: "/north-carolina"
+      url: "/tax-incentives/north-carolina"
     },
     DC: {
       name: "District of Columbia",
-      url: "/district-of-columbia"
+      url: "/tax-incentives/district-of-columbia"
     },
     MA: {
       name: "Massachusetts",
-      url: "/massachusetts"
+      url: "/tax-incentives/massachusetts"
     },
     TN: {
       name: "Tennessee",
-      url: "/tennessee"
+      url: "/tax-incentives/tennessee"
     },
     AR: {
       name: "Arkansas",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/arkansas"
+      url: "/tax-incentives/arkansas"
     },
     MO: {
       name: "Missouri",
-      url: "/missouri"
+      url: "/tax-incentives/missouri"
     },
     GA: {
       name: "Georgia",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/georgia"
+      url: "/tax-incentives/georgia"
     },
     SC: {
       name: "South Carolina",
       color: "#4C603E",
       hover_color: "#4C603E",
-      url: "/south-carolina"
+      url: "/tax-incentives/south-carolina"
     },
     KY: {
       name: "Kentucky",
-      url: "/kentucky"
+      url: "/tax-incentives/kentucky"
     },
     AL: {
       name: "Alabama",
-      url: "/alabama"
+      url: "/tax-incentives/alabama"
     },
     LA: {
       name: "Louisiana",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/louisiana"
+      url: "/tax-incentives/louisiana"
     },
     MS: {
       name: "Mississippi",
       color: "#4C603E",
       hover_color: "#4C603E",
-      url: "/mississippi"
+      url: "/tax-incentives/mississippi"
     },
     IA: {
       name: "Iowa",
-      url: "/iowa"
+      url: "/tax-incentives/iowa"
     },
     MN: {
       name: "Minnesota",
-      url: "/minnesota"
+      url: "/tax-incentives/minnesota"
     },
     OK: {
       name: "Oklahoma",
-      url: "/oklahoma"
+      url: "/tax-incentives/oklahoma"
     },
     TX: {
       name: "Texas",
-      url: "/texas"
+      url: "/tax-incentives/texas"
     },
     NM: {
       name: "New Mexico",
       color: "#4C603E",
       hover_color: "#4C603E",
-      url: "/new-mexico"
+      url: "/tax-incentives/new-mexico"
     },
     KS: {
       name: "Kansas",
       color: "#4C603E",
       hover_color: "#4C603E",
-      url: "/kansas"
+      url: "/tax-incentives/kansas"
     },
     NE: {
       name: "Nebraska",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/nebraska"
+      url: "/tax-incentives/nebraska"
     },
     SD: {
       name: "South Dakota",
-      url: "/south-dakota"
+      url: "/tax-incentives/south-dakota"
     },
     ND: {
       name: "North Dakota",
-      url: "/north-dakota"
+      url: "/tax-incentives/north-dakota"
     },
     WY: {
       name: "Wyoming",
-      url: "/wyoming"
+      url: "/tax-incentives/wyoming"
     },
     MT: {
       name: "Montana",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/montana"
+      url: "/tax-incentives/montana"
     },
     CO: {
       name: "Colorado",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/colorado"
+      url: "/tax-incentives/colorado"
     },
     UT: {
       name: "Utah",
-      url: "/utah"
+      url: "/tax-incentives/utah"
     },
     AZ: {
       name: "Arizona",
-      url: "/arizona"
+      url: "/tax-incentives/arizona"
     },
     NV: {
       name: "Nevada",
-      url: "/nevada"
+      url: "/tax-incentives/nevada"
     },
     OR: {
       name: "Oregon",
       color: "#738F5D",
       hover_color: "#738F5D",
-      url: "/oregon"
+      url: "/tax-incentives/oregon"
     },
     WA: {
       name: "Washington",
-      url: "/washington"
+      url: "/tax-incentives/washington"
     },
     CA: {
       name: "California",
-      url: "/california"
+      url: "/tax-incentives/california"
     },
     MI: {
       name: "Michigan",
-      url: "/michigan"
+      url: "/tax-incentives/michigan"
     },
     ID: {
       name: "Idaho",
-      url: "/idaho"
+      url: "/tax-incentives/idaho"
     },
     GU: {
       name: "Guam",
       hide: "yes",
-      url: "/guam"
+      url: "/tax-incentives/guam"
     },
     VI: {
       name: "Virgin Islands",
       hide: "yes",
-      url: "/virgin-islands"
+      url: "/tax-incentives/virgin-islands"
     },
     PR: {
       name: "Puerto Rico",
       hide: "yes",
-      url: "/puerto-rico"
+      url: "/tax-incentives/puerto-rico"
     },
     MP: {
       name: "Northern Mariana Islands",
       hide: "yes",
-      url: "/northern-mariana-islands"
+      url: "/tax-incentives/northern-mariana-islands"
     },
     AS: {
       name: "American Samoa",
       hide: "yes",
-      url: "/american-samoa"
+      url: "/tax-incentives/american-samoa"
     }
   },
   locations: {},
