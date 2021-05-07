@@ -246,8 +246,6 @@ var simplemaps_usmap_mapdata={
     },
     NE: {
       name: "Nebraska",
-      color: "#738F5D",
-      hover_color: "#738F5D",
       url: "/tax-incentives/nebraska"
     },
     SD: {
@@ -288,8 +286,6 @@ var simplemaps_usmap_mapdata={
     },
     OR: {
       name: "Oregon",
-      color: "#738F5D",
-      hover_color: "#738F5D",
       url: "/tax-incentives/oregon"
     },
     WA: {
@@ -626,5 +622,8 @@ var simplemaps_usmap_mapdata={
       y: "580"
     }
   },
-  regions: {}
+  regions: {},
+  legend: {
+    entries: []
+  }
 };
