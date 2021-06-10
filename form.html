@@ -1,0 +1,177 @@
+<html>
+
+<head>
+	<title>Tax Benefit Calculator | Arvorie</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="section">
+	<div class="container">
+
+<div class="tag mb12">mobile-only</div>
+<h1 class="heading1">Tax Benefit Calculator</h1>
+
+<form id="" name="" data-name="" class="">
+	<div class="section-title">
+		<div>Company Profile</div>
+		<div>for profit</div>
+	</div>
+	<div class="section-content">
+		<div class="section-group">
+			<div class="content-title mb20">employees in</div>
+			<div class="mb20">
+				<div class="content-label mb12">New York</div>
+				<input type="text" class="input-text">
+			</div>
+			<div class="mb20">
+				<div class="content-label mb12">South Carolina</div>
+				<input type="text" class="input-text">
+			</div>
+			<div class="mb20">
+				<div class="content-label mb12">Mississipi</div>
+				<input type="text" class="input-text">
+			</div>
+			<div class="mb20">
+				<div class="content-label mb12">New Mexico</div>
+				<input type="text" class="input-text">
+			</div>
+			<div class="mb20">
+				<div class="content-label mb12">Kansas</div>
+				<input type="text" class="input-text">
+			</div>
+			<div class="mb20">
+				<div class="content-label mb12">Rhode Island</div>
+				<input type="text" class="input-text">
+			</div>
+			<div class="mb20">
+				<div class="content-label mb12">Other States</div>
+				<input type="text" class="input-text">
+			</div>
+			<div>
+				<div class="content-total mb12">Total in the U.S.</div>
+				<input type="text" class="input-text" disabled>
+			</div>
+		</div>
+	</div>
+	<div class="section-title">
+		<div>Benefit Coverage</div>
+	</div>
+	<div class="section-content">
+		<div class="section-group bb1">
+			<div class="content-title mb20">children age</div>
+		
+			<div class="toggle-group mb20">
+				<label for="" class="content-label">0-5 years</label>
+				<label class="toggle">
+					<input type="checkbox">
+					<span class="toggle-slider"></span>
+				</label>
+			</div>
+	
+			<div class="toggle-group">
+				<label for="" class="content-label">6-13 years</label>
+				<label class="toggle">
+					<input type="checkbox">
+					<span class="toggle-slider"></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="section-group">
+			<div class="content-title mb20">care type</div>
+		
+			<div class="toggle-group mb20">
+				<label for="" class="content-label">Daycare</label>
+				<label class="toggle">
+					<input type="checkbox">
+					<span class="toggle-slider"></span>
+				</label>
+			</div>
+	
+			<div class="toggle-group mb20">
+				<label for="" class="content-label">Nanny</label>
+				<label class="toggle">
+					<input type="checkbox">
+					<span class="toggle-slider"></span>
+				</label>
+			</div>
+	
+			<div class="toggle-group mb20">
+				<label for="" class="content-label">Babysitter</label>
+				<label class="toggle">
+					<input type="checkbox">
+					<span class="toggle-slider"></span>
+				</label>
+			</div>
+	
+			<div class="toggle-group">
+				<label for="" class="content-label">Summer Camp</label>
+				<label class="toggle">
+					<input type="checkbox">
+					<span class="toggle-slider"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="section-title">
+		<div>Employer Contribution</div>
+	</div>
+	<div class="section-content">
+		<div class="section-group bb1">
+			<div class="slider-group mb20">
+				<div class="content-title">per parent per month</div>
+				<div class="content-display">$ <span id="pppm"></span></div>
+			</div>
+			<div class="slider-container mb12">
+				<input id="pppm-range" type="range" min="50" max="500" value="50" class="slider">
+			</div>
+			<div class="caption-container">
+				<div>$ 50</div>
+				<div>$ 500</div>
+			</div>
+		</div>
+		
+		<div class="section-group">
+			<div class="slider-group mb20">
+				<div class="content-title">share spent with daycare</div>
+				<div class="content-display"><span id="sswd"></span>%</div>
+			</div>
+			<div class="slider-container mb12">
+				<input id="sswd-range" type="range" min="0" max="100" value="0" class="slider">
+			</div>
+			<div class="caption-container">
+				<div>0%</div>
+				<div>100%</div>
+			</div>
+		</div>
+	</div>		
+</form>
+
+	</div>
+</div>
+
+<script>
+var slider1 = document.getElementById("pppm-range");
+var output1 = document.getElementById("pppm");
+output1.innerHTML = slider1.value;
+
+slider1.oninput = function() {
+	output1.innerHTML = this.value;
+}
+</script>
+
+<script>
+var slider2 = document.getElementById("sswd-range");
+var output2 = document.getElementById("sswd");
+output2.innerHTML = slider2.value;
+
+slider2.oninput = function() {
+	output2.innerHTML = this.value;
+}
+</script>
+
+</body>
+
+</html>
