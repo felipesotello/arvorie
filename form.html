@@ -1,128 +1,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <html>
-
 <head>
 	<title>Tax Benefit Calculator | Arvorie</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
 <div class="section">
 	<div class="container">
-
-<div class="tag mb12">mobile-only</div>
-<h1 class="heading1">Tax Benefit Calculator</h1>
 
 <form id="" name="" data-name="" class="">
 	<div class="section-title">
 		<div>Company Profile</div>
-		<div>for profit</div>
+		<!-- <div>for profit</div> -->
+		<div class="teste-container">
+			<label class="teste">
+				<input type="checkbox" checked>
+				<span class="teste-slider">
+					<span class="off">non-profit</span>
+					<span class="on">for profit</span>
+				</span>
+			</label>
+		</div>
 	</div>
-	<div class="section-content">
+	<div class="section-container">
 		<div class="section-group">
 			<div class="content-title mb20">employees in</div>
-			<div class="mb20">
-				<div class="content-label mb12">New York</div>
-				<input type="text" class="input-text">
-			</div>
-			<div class="mb20">
-				<div class="content-label mb12">South Carolina</div>
-				<input type="text" class="input-text">
-			</div>
-			<div class="mb20">
-				<div class="content-label mb12">Mississipi</div>
-				<input type="text" class="input-text">
-			</div>
-			<div class="mb20">
-				<div class="content-label mb12">New Mexico</div>
-				<input type="text" class="input-text">
-			</div>
-			<div class="mb20">
-				<div class="content-label mb12">Kansas</div>
-				<input type="text" class="input-text">
-			</div>
-			<div class="mb20">
-				<div class="content-label mb12">Rhode Island</div>
-				<input type="text" class="input-text">
-			</div>
-			<div class="mb20">
-				<div class="content-label mb12">Other States</div>
-				<input type="text" class="input-text">
-			</div>
-			<div>
-				<div class="content-total mb12">Total in the U.S.</div>
-				<input type="text" class="input-text" disabled>
+			<div class="section-grid">
+				<div>
+					<div class="content-label mb12">New York</div>
+					<input type="number" class="input-text">
+				</div>
+				<div>
+					<div class="content-label mb12">South Carolina</div>
+					<input type="number" class="input-text">
+				</div>
+				<div>
+					<div class="content-label mb12">Mississipi</div>
+					<input type="number" class="input-text">
+				</div>
+				<div>
+					<div class="content-label mb12">New Mexico</div>
+					<input type="number" class="input-text">
+				</div>
+				<div>
+					<div class="content-label mb12">Kansas</div>
+					<input type="number" class="input-text">
+				</div>
+				<div>
+					<div class="content-label mb12">Rhode Island</div>
+					<input type="number" class="input-text">
+				</div>
+				<div>
+					<div class="content-label mb12">Other States</div>
+					<input type="number" class="input-text">
+				</div>
+				<div>
+					<div class="content-total mb12">Total in the U.S.</div>
+					<input type="number" class="input-text" disabled>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="section-title">
 		<div>Benefit Coverage</div>
 	</div>
-	<div class="section-content">
+	<div class="section-container">
 		<div class="section-group bb1">
 			<div class="content-title mb20">children age</div>
-		
-			<div class="toggle-group mb20">
-				<label for="" class="content-label">0-5 years</label>
-				<label class="toggle">
-					<input type="checkbox">
-					<span class="toggle-slider"></span>
-				</label>
-			</div>
-	
-			<div class="toggle-group">
-				<label for="" class="content-label">6-13 years</label>
-				<label class="toggle">
-					<input type="checkbox">
-					<span class="toggle-slider"></span>
-				</label>
+			<div class="section-grid">
+				<div class="toggle-group">
+					<label class="toggle">
+						<input type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">0-5 years</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">6-13 years</label>
+				</div>
 			</div>
 		</div>
-
 		<div class="section-group">
 			<div class="content-title mb20">care type</div>
-		
-			<div class="toggle-group mb20">
-				<label for="" class="content-label">Daycare</label>
-				<label class="toggle">
-					<input type="checkbox">
-					<span class="toggle-slider"></span>
-				</label>
-			</div>
-	
-			<div class="toggle-group mb20">
-				<label for="" class="content-label">Nanny</label>
-				<label class="toggle">
-					<input type="checkbox">
-					<span class="toggle-slider"></span>
-				</label>
-			</div>
-	
-			<div class="toggle-group mb20">
-				<label for="" class="content-label">Babysitter</label>
-				<label class="toggle">
-					<input type="checkbox">
-					<span class="toggle-slider"></span>
-				</label>
-			</div>
-	
-			<div class="toggle-group">
-				<label for="" class="content-label">Summer Camp</label>
-				<label class="toggle">
-					<input type="checkbox">
-					<span class="toggle-slider"></span>
-				</label>
+			<div class="section-grid">
+				<div class="toggle-group">
+					<label class="toggle">
+						<input type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Daycare</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Nanny</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Babysitter</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Summer Camp</label>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="section-title">
 		<div>Employer Contribution</div>
 	</div>
-	<div class="section-content">
+	<div class="section-container">
 		<div class="section-group bb1">
 			<div class="slider-group mb20">
 				<div class="content-title">per parent per month</div>
@@ -136,7 +137,6 @@
 				<div>$ 500</div>
 			</div>
 		</div>
-		
 		<div class="section-group">
 			<div class="slider-group mb20">
 				<div class="content-title">share spent with daycare</div>
@@ -155,27 +155,6 @@
 
 	</div>
 </div>
-
-<script>
-var slider1 = document.getElementById("pppm-range");
-var output1 = document.getElementById("pppm");
-output1.innerHTML = slider1.value;
-
-slider1.oninput = function() {
-	output1.innerHTML = this.value;
-}
-</script>
-
-<script>
-var slider2 = document.getElementById("sswd-range");
-var output2 = document.getElementById("sswd");
-output2.innerHTML = slider2.value;
-
-slider2.oninput = function() {
-	output2.innerHTML = this.value;
-}
-</script>
-
+<script type="text/javascript" src="tax-benefit-calculator.js"></script>
 </body>
-
 </html>
