@@ -1,0 +1,138 @@
+<form action="" id="" name="" data-name="" class="">
+	<div class="section-title">
+		<div>Company Profile</div>
+		<div class="teste-container">
+
+			<div class="toggle-group">
+				<label class="toggle">
+					<input id="not_for_profit" type="checkbox">
+					<span class="toggle-slider"></span>
+				</label>
+				<label for="" class="content-label">Not-for-profit</label>
+			</div>
+
+			<!-- <label class="teste">
+				<input id="not_for_profit" type="checkbox" checked>
+				<span class="teste-slider">
+					<span class="off">not-for-profit</span>
+					<span class="on">for-profit</span>
+				</span>
+			</label> -->
+
+		</div>
+	</div>
+	<div class="section-container">
+		<div class="section-group">
+			<div class="content-title mb20">employees in the u.s.</div>
+			<div class="section-grid">
+				<div>
+					<div class="content-label mb4">New York</div>
+					<input id="employees_ny" type="number" class="input-text" oninput="employees()">
+				</div>
+				<div>
+					<div class="content-label mb4">South Carolina</div>
+					<input id="employees_sc" type="number" class="input-text" oninput="employees()">
+				</div>
+				<div>
+					<div class="content-label mb8">Mississipi</div>
+					<input id="employees_ms" type="number" class="input-text" oninput="employees()">
+				</div>
+				<div>
+					<div class="content-label mb8">New Mexico</div>
+					<input id="employees_nm" type="number" class="input-text" oninput="employees()">
+				</div>
+				<div>
+					<div class="content-label mb12">Kansas</div>
+					<input id="employees_ks" type="number" class="input-text" oninput="employees()">
+				</div>
+				<div>
+					<div class="content-label mb12">Rhode Island</div>
+					<input id="employees_ri" type="number" class="input-text" oninput="employees()">
+				</div>
+				<div>
+					<div class="content-label mb4">Other States</div>
+					<input id="employees_other" type="number" class="input-text" oninput="employees()">
+				</div>
+				<div>
+					<div class="content-total mb4">Total</div>
+					<input id="employees_total" type="number" class="input-text" disabled>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-title">
+		<div>Benefit Coverage</div>
+	</div>
+	<div class="section-container">
+		<div class="section-group bb1">
+			<div class="content-title mb20">age of children</div>
+			<div class="section-grid">
+				<div class="toggle-group">
+					<label class="toggle">
+						<input id="coverage_zero_to_five" type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">0-5 years</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input id="coverage_six_to_thirteen" type="checkbox">
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">6-13 years</label>
+				</div>
+			</div>
+		</div>
+		<div class="section-group">
+			<div class="content-title mb20">care type</div>
+			<div class="section-grid">
+				<div class="toggle-group">
+					<label class="toggle">
+						<input id="coverage_daycare" type="checkbox" disabled>
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Daycare</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input id="coverage_nanny" type="checkbox" disabled>
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Nanny</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input id="coverage_babysitter" type="checkbox" disabled>
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Babysitter</label>
+				</div>
+				<div class="toggle-group">
+					<label class="toggle">
+						<input id="coverage_summer_camp" type="checkbox" disabled>
+						<span class="toggle-slider"></span>
+					</label>
+					<label for="" class="content-label">Summer Camp</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-title">
+		<div>Employer Contribution</div>
+	</div>
+	<div class="section-container">
+		<div class="section-group">
+			<div class="slider-group mb20">
+				<div class="content-title">per parent per month</div>
+				<div class="content-display">$ <span id="contribution_pppm_display">contribution_pppm_display</span></div>
+			</div>
+			<div class="slider-container mb12">
+				<input id="contribution_pppm" type="range" min="50" max="500" class="slider">
+			</div>
+			<div class="caption-container">
+				<div>$ 50</div>
+				<div>$ 500</div>
+			</div>
+		</div>
+	</div>
+</form>
