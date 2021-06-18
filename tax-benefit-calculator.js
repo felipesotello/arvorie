@@ -213,10 +213,10 @@ function calcTudo() {
 
 	// daycare_share =IF(coverage_daycare=0;0;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=0);1;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=1);0,3;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=1);0,5;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=0);0,5;IF(coverage_summer_camp=1;0,4;0,6))))))
 
-	let daycare_share;
+	let daycare_share = 0;
 
 	if (!coverage_daycare.checked) {
-		daycare_share = 0;
+		daycare_share = parseInt(0, 10);
 		console.log('daycare_share: ' + daycare_share);
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = 1;
@@ -308,19 +308,19 @@ function calcTudo() {
 
 	//
 
-	let state_tax_credit_sc;
-	let state_tax_credit_ms;
-	let state_tax_credit_nm;
-	let state_tax_credit_ks;
-	let state_tax_credit_ri;
-	let state_tax_credit_other;
+	let state_tax_credit_sc = 0;
+	let state_tax_credit_ms = 0;
+	let state_tax_credit_nm = 0;
+	let state_tax_credit_ks = 0;
+	let state_tax_credit_ri = 0;
+	let state_tax_credit_other = 0;
 
-	let state_tax_shield_sc;
-	let state_tax_shield_ms;
-	let state_tax_shield_nm;
-	let state_tax_shield_ks;
-	let state_tax_shield_ri;
-	let state_tax_shield_other;
+	let state_tax_shield_sc = 0;
+	let state_tax_shield_ms = 0;
+	let state_tax_shield_nm = 0;
+	let state_tax_shield_ks = 0;
+	let state_tax_shield_ri = 0;
+	let state_tax_shield_other = 0;
 
 	// state_tax_credit =state_tax_credit_ny+state_tax_credit_sc+state_tax_credit_ms+state_tax_credit_mn+state_tax_credit_nks+state_tax_credit_ri+state_tax_credit_other
 
