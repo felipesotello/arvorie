@@ -9,7 +9,7 @@ const employees_nm = document.getElementById('employees_nm');
 const employees_ks = document.getElementById('employees_ks');
 const employees_ri = document.getElementById('employees_ri');
 const employees_other = document.getElementById('employees_other');
-const employees_total = document.getElementById('employees_total');
+const employees_total_display = document.getElementById('employees_total_display');
 
 const coverage_zero_to_five = document.getElementById('coverage_zero_to_five');
 const coverage_six_to_thirteen = document.getElementById('coverage_six_to_thirteen');
@@ -61,7 +61,7 @@ employees_nm.value = '0';
 employees_ks.value = '0';
 employees_ri.value = '0';
 employees_other.value = '0';
-employees_total.value = '0';
+employees_total_display.value = '0';
 
 coverage_daycare.disabled = true;
 coverage_nanny.disabled = true;
@@ -80,11 +80,32 @@ state_tax_savings_modal.innerHTML =  '0';
 net_cost_pppm_modal.innerHTML =  '0';
 salary_equivalent_pppm_modal.innerHTML =  '0';
 
+// interaction triggers
+
+// not_for_profit.onchange = companyType();
+
+employees_ny.oninput = employees();
+employees_sc.oninput = employees();
+employees_ms.oninput = employees();
+employees_nm.oninput = employees();
+employees_ks.oninput = employees();
+employees_ri.oninput = employees();
+employees_other.oninput = employees();
+
+coverage_zero_to_five.onchange = zero_to_five();
+coverage_six_to_thirteen.onchange = six_to_thirteen();
+
+coverage_daycare.onchange = calcTudo();
+coverage_nanny.onchange = calcTudo();
+coverage_babysitter.onchange = calcTudo();
+coverage_summer_camp.onchange = calcTudo();
+
+contribution_pppm.oninput = contributionSlider();
+
 // interaction functions
 
-// not_for_profit.onchange = function() {
+// function companyType() {
 // 	if (not_for_profit.checked) {
-// 		console.log('modo ONG ativado');
 // 		employees_ny.disabled = true;
 // 		employees_sc.disabled = true;
 // 		employees_ms.disabled = true;
@@ -98,7 +119,6 @@ salary_equivalent_pppm_modal.innerHTML =  '0';
 // 		coverage_six_to_thirteen.checked = false;
 // 		contribution_pppm.disabled = true;
 // 	} else {
-// 		console.log('modo ONG desativado');
 // 		employees_ny.disabled = false;
 // 		employees_sc.disabled = false;
 // 		employees_ms.disabled = false;
@@ -121,172 +141,156 @@ function employees() {
 	const f = parseInt(employees_ri.value, 10);
 	const g = parseInt(employees_other.value, 10);
 	const h = a + b + c + d + e + f + g;
-	employees_total.value = h;
+	
+	employees_total_display.value = h;
+
 	calcTudo();
 }
 
-coverage_zero_to_five.onchange = function() {
+function zero_to_five() {
 	if (coverage_zero_to_five.checked) {
-		// console.log('coverage_zero_to_five está ativo');
 		coverage_daycare.disabled = false;
 		coverage_nanny.disabled = false;
 		coverage_babysitter.disabled = false;
-		calcTudo();
 	} else {
-		// console.log('coverage_zero_to_five está inativo');
 		coverage_daycare.disabled = true;
 		coverage_nanny.disabled = true;
 		coverage_babysitter.disabled = true;
+
 		coverage_daycare.checked = false;
 		coverage_nanny.checked = false;
 		coverage_babysitter.checked = false;
-		calcTudo();
 	}
-}
-
-coverage_six_to_thirteen.onchange = function() {
-	if (coverage_six_to_thirteen.checked) {
-		// console.log('coverage_six_to_thirteen está ativo');
-		coverage_nanny.disabled = false;
-		coverage_babysitter.disabled = false;
-		coverage_summer_camp.disabled = false;
-		calcTudo();
-	} else {
-		// console.log('coverage_six_to_thirteen está inativo');
-		coverage_nanny.disabled = true;
-		coverage_babysitter.disabled = true;
-		coverage_summer_camp.disabled = true;
-		coverage_nanny.checked = false;
-		coverage_babysitter.checked = false;
-		coverage_summer_camp.checked = false;
-		calcTudo();
-	}
-}
-
-coverage_daycare.onchange = function() {
-	if (coverage_daycare.checked) {
-		// console.log('coverage_daycare está ativo');
-		calcTudo();
-	} else {
-		// console.log('coverage_daycare está inativo');
-		calcTudo();
-	}
-}
-
-coverage_nanny.onchange = function() {
-	if (coverage_nanny.checked) {
-		// console.log('coverage_nanny está ativo');
-		calcTudo();
-	} else {
-		// console.log('coverage_nanny está inativo');
-		calcTudo();
-	}
-}
-
-coverage_babysitter.onchange = function() {
-	if (coverage_babysitter.checked) {
-		// console.log('coverage_babysitter está ativo');
-		calcTudo();
-	} else {
-		// console.log('coverage_babysitter está inativo');
-		calcTudo();
-	}
-}
-
-coverage_summer_camp.onchange = function() {
-	if (coverage_summer_camp.checked) {
-		// console.log('coverage_summer_camp está ativo');
-		calcTudo();
-	} else {
-		// console.log('coverage_summer_camp está inativo');
-		calcTudo();
-	}
-}
-
-contribution_pppm.oninput = function() {
-	contribution_pppm_display.innerHTML = this.value;
+	
 	calcTudo();
 }
 
-// formulas
+function six_to_thirteen() {
+	if (coverage_six_to_thirteen.checked) {
+		coverage_nanny.disabled = false;
+		coverage_babysitter.disabled = false;
+		coverage_summer_camp.disabled = false;
+	} else {
+		coverage_nanny.disabled = true;
+		coverage_babysitter.disabled = true;
+		coverage_summer_camp.disabled = true;
 
-// parents_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
+		coverage_nanny.checked = false;
+		coverage_babysitter.checked = false;
+		coverage_summer_camp.checked = false;
+	}
+	
+	calcTudo();
+}
 
-// let parent_usage;
-
-// coverage_zero_to_five.onchange = function() {
-// 	let a;
-
-// 	if (coverage_zero_to_five.checked = true) {
-// 		a = .1;
-// 	} else {
-// 		a = 0;
-// 	};
-
-// 	console.log(a);
-// }
-
-// parents_participating =F26*employees_total
-
-// const parents_participating = parents_usage * employees_total;
-
-// daycare_share =IF(coverage_daycare=0;0;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=0);1;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=1);0,3;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=1);0,5;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=0);0,5;IF(coverage_summer_camp=1;0,4;0,6))))))
-
-// contribution_monthly = parents_participating * contribution_pppm
-
-// contribution_yearly = parents_participating * contribution_pppm * 12
-
-// federal_tax_credit =IF(not_for_profit=1;0;MIN(daycare_share*parents_participating*contribution_pppm*12*0,25;150000))
-
-// federal_tax_shield =IF(not_for_profit=1;0;(daycare_share*parents_participating*contribution_pppm*12-federal_tax_credit)*0,21)
-
-// federal_tax_savings =(federal_tax_credit + federal_tax_shield) / contribution_yearly
-
-// state_tax_credit_ny =IF(not_for_profit=1;0;MIN(daycare_share*employees_ny*parents_usage*contribution_pppm*12*0,25;150000))
-
-// state_tax_shield_ny =IF(not_for_profit=1;0;(daycare_share*employees_ny*parents_usage*contribution_pppm*12-state_tax_credit_ny)*0,071)
-
-// state_tax_credit =state_tax_credit_ny+state_tax_credit_sc+state_tax_credit_ms+state_tax_credit_mn+state_tax_credit_nks+state_tax_credit_ri+state_tax_credit_other
-
-// state_tax_shield =state_tax_shield_ny+state_tax_shield_sc+state_tax_shield_ms+state_tax_shield_mn+state_tax_shield_ks+state_tax_shield_ri+state_tax_shield_other
-
-// state_tax_savings =(state_tax_credit+state_tax_shield)/contribution_yearly
-
-// const tax_benefit = federal_tax_savings + state_tax_savings
-
-// net_cost_pppm =contribution_pppm*(1-tax_benefit)
-
-// net_cost_monthly =parents_participating*net_cost_pppm
-
-// net_cost_yearly =+parents_participating*net_cost_pppm*12
-
-// salary_equivalent_pppm =contribution_pppm*(1+0,0665)
-
-// salary_equivalent_monthly =salary_equivalent_pppm*parents_participating
-
-// salary_equivalent_yearly =salary_equivalent_pppm*parents_participating*12
-
-// calc
+function contributionSlider() {
+	contribution_pppm_display.innerHTML = this.value;
+	
+	calcTudo();
+}
 
 function calcTudo() {
-	
+
 	// employees
-	const a = parseInt(employees_total.value, 10);
-	// console.log('total employees in the u.s. is ' + a);
-	
+
+	let employees_total = parseInt(employees_total.value, 10);
+
 	// coverage
-	// if (coverage_zero_to_five.checked) {
-	// 	console.log('coverage_zero_to_five DENTRO da conta!');
-	// } else {
-	// 	console.log('coverage_zero_to_five FORA da conta!');
-	// }
+
+	
 
 	// contribution
 
 
+
+	// FORMULAS
+
+	// parents_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
+
+	let parent_usage;
+
+	if (coverage_zero_to_five.checked && coverage_six_to_thirteen.checked) {
+		parent_usage = .2;
+	} else if (coverage_zero_to_five.checked || coverage_six_to_thirteen.checked) {
+		parent_usage = .1;
+	} else {
+		parent_usage = 0;
+	}
+
+	console.log('parent_usage: ' + parent_usage);
+
+	// parents_participating =parent_usage*employees_total
+
+	let parents_participating = parent_usage * employees_total;
+	
+	console.log('parents_participating: ' + parents_participating);
+
+	// daycare_share =IF(coverage_daycare=0;0;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=0);1;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=1);0,3;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=1);0,5;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=0);0,5;IF(coverage_summer_camp=1;0,4;0,6))))))
+
+	let daycare_share;
+
+	if (!coverage_daycare.checked) {
+		daycare_share = 0;
+		console.log('daycare_share: ' + daycare_share);
+	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && !coverage_summer_camp.checked) {
+		daycare_share = 1;
+		console.log('daycare_share: ' + daycare_share);
+	} else if (coverage_nanny.checked && coverage_babysitter.checked && coverage_summer_camp.checked) {
+		daycare_share = .3;
+		console.log('daycare_share: ' + daycare_share);
+	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && coverage_summer_camp.checked) {
+		daycare_share = .5;
+		console.log('daycare_share: ' + daycare_share);
+	} else if (coverage_nanny.checked && coverage_babysitter.checked && !coverage_summer_camp.checked) {
+		daycare_share = .5;
+		console.log('daycare_share: ' + daycare_share);
+	} else if (coverage_summer_camp.checked) {
+		daycare_share = .4;
+		console.log('daycare_share: ' + daycare_share);
+	} else {
+		daycare_share = .6;
+		console.log('daycare_share: ' + daycare_share);
+	};
+
+	// contribution_monthly = parents_participating * contribution_pppm
+
+	// contribution_yearly = parents_participating * contribution_pppm * 12
+
+	// federal_tax_credit =IF(not_for_profit=1;0;MIN(daycare_share*parents_participating*contribution_pppm*12*0,25;150000))
+
+	// federal_tax_shield =IF(not_for_profit=1;0;(daycare_share*parents_participating*contribution_pppm*12-federal_tax_credit)*0,21)
+
+	// federal_tax_savings =(federal_tax_credit + federal_tax_shield) / contribution_yearly
+
+	// state_tax_credit_ny =IF(not_for_profit=1;0;MIN(daycare_share*employees_ny*parents_usage*contribution_pppm*12*0,25;150000))
+
+	// state_tax_shield_ny =IF(not_for_profit=1;0;(daycare_share*employees_ny*parents_usage*contribution_pppm*12-state_tax_credit_ny)*0,071)
+
+	// state_tax_credit =state_tax_credit_ny+state_tax_credit_sc+state_tax_credit_ms+state_tax_credit_mn+state_tax_credit_nks+state_tax_credit_ri+state_tax_credit_other
+
+	// state_tax_shield =state_tax_shield_ny+state_tax_shield_sc+state_tax_shield_ms+state_tax_shield_mn+state_tax_shield_ks+state_tax_shield_ri+state_tax_shield_other
+
+	// state_tax_savings =(state_tax_credit+state_tax_shield)/contribution_yearly
+
+	// const tax_benefit = federal_tax_savings + state_tax_savings
+
+	// net_cost_pppm =contribution_pppm*(1-tax_benefit)
+
+	// net_cost_monthly =parents_participating*net_cost_pppm
+
+	// net_cost_yearly =+parents_participating*net_cost_pppm*12
+
+	// salary_equivalent_pppm =contribution_pppm*(1+0,0665)
+
+	// salary_equivalent_monthly =salary_equivalent_pppm*parents_participating
+
+	// salary_equivalent_yearly =salary_equivalent_pppm*parents_participating*12
+	
+	//
+
 	// display
 	tax_benefit_display.innerHTML = a;
-	
+
 	// modal
 	tax_benefit_modal.innerHTML = a;
 	contribution_pppm_modal.innerHTML =  contribution_pppm.value;
@@ -294,6 +298,7 @@ function calcTudo() {
 	state_tax_savings_modal.innerHTML =  a;
 	net_cost_pppm_modal.innerHTML =  a;
 	salary_equivalent_pppm_modal.innerHTML =  a;
+
 }
 
 // interaction experience fixes
