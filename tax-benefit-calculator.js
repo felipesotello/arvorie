@@ -298,7 +298,7 @@ function calcTudo() {
 
 
 	// display
-	tax_benefit.innerHTML = a;
+	tax_benefit_display.innerHTML = a;
 	
 	// modal
 	tax_benefit_modal.innerHTML = a;
