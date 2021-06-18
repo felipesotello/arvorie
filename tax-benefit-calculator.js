@@ -189,17 +189,9 @@ function calcTudo() {
 
 	let employees_total = parseInt(employees_total_display.value, 10);
 
-	// coverage
-
-	
-
-	// contribution
-
-
-
 	// FORMULAS
 
-	// parents_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
+	// parent_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
 
 	let parent_usage;
 
@@ -225,75 +217,203 @@ function calcTudo() {
 
 	if (!coverage_daycare.checked) {
 		daycare_share = 0;
-		console.log('share of daycare: ' + daycare_share);
+		console.log('daycare_share: ' + daycare_share);
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = 1;
-		console.log('share of daycare: ' + daycare_share);
+		console.log('daycare_share: ' + daycare_share);
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && coverage_summer_camp.checked) {
 		daycare_share = .3;
-		console.log('share of daycare: ' + daycare_share);
+		console.log('daycare_share: ' + daycare_share);
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && coverage_summer_camp.checked) {
 		daycare_share = .5;
-		console.log('share of daycare: ' + daycare_share);
+		console.log('daycare_share: ' + daycare_share);
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = .5;
-		console.log('share of daycare: ' + daycare_share);
+		console.log('daycare_share: ' + daycare_share);
 	} else if (coverage_summer_camp.checked) {
 		daycare_share = .4;
-		console.log('share of daycare: ' + daycare_share);
+		console.log('daycare_share: ' + daycare_share);
 	} else {
 		daycare_share = .6;
-		console.log('share of daycare: ' + daycare_share);
+		console.log('daycare_share: ' + daycare_share);
 	};
 
 	// contribution_monthly = parents_participating * contribution_pppm
 
+	let contribution_monthly = parents_participating * contribution_pppm.value;
+
+	console.log('contribution_monthly: ' + contribution_monthly);
+
 	// contribution_yearly = parents_participating * contribution_pppm * 12
+
+	let contribution_yearly = parents_participating * contribution_pppm.value * 12
+
+	console.log('contribution_yearly: ' + contribution_yearly);
 
 	// federal_tax_credit =IF(not_for_profit=1;0;MIN(daycare_share*parents_participating*contribution_pppm*12*0,25;150000))
 
+	let federal_tax_credit;
+
+	if (not_for_profit.checked) {
+		federal_tax_credit = 0;
+	} else {
+		federal_tax_credit = Math.min(daycare_share * parents_participating * contribution_pppm.value * 12 * .25, 150000);
+	};
+
+	console.log('federal_tax_credit: ' + federal_tax_credit);
+
 	// federal_tax_shield =IF(not_for_profit=1;0;(daycare_share*parents_participating*contribution_pppm*12-federal_tax_credit)*0,21)
 
-	// federal_tax_savings =(federal_tax_credit + federal_tax_shield) / contribution_yearly
+	let federal_tax_shield;
 
-	// state_tax_credit_ny =IF(not_for_profit=1;0;MIN(daycare_share*employees_ny*parents_usage*contribution_pppm*12*0,25;150000))
+	if (not_for_profit.checked) {
+		federal_tax_shield = 0;
+	} else {
+		federal_tax_shield = ((daycare_share * parents_participating * contribution_pppm.value * 12) - federal_tax_credit) * .21;
+	}
 
-	// state_tax_shield_ny =IF(not_for_profit=1;0;(daycare_share*employees_ny*parents_usage*contribution_pppm*12-state_tax_credit_ny)*0,071)
+	console.log('federal_tax_shield: ' + federal_tax_shield);
+
+	// federal_tax_savings =(federal_tax_credit + federal_tax_sh0ield) / contribution_yearly
+
+	let federal_tax_savings;
+
+	federal_tax_savings = (federal_tax_credit + federal_tax_shield) / contribution_yearly;
+
+	console.log('federal_tax_savings: ' + federal_tax_savings);
+
+	// state_tax_credit_ny =IF(not_for_profit=1;0;MIN(daycare_share*employees_ny*parent_usage*contribution_pppm*12*0,25;150000))
+
+	let state_tax_credit_ny;
+
+	if (not_for_profit.checked) {
+		state_tax_credit_ny = 0;
+	} else {
+		state_tax_credit_ny = Math.min(daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12 * .25, 150000);
+	}
+
+	console.log('state_tax_credit_ny: ' + state_tax_credit_ny);
+
+	// state_tax_shield_ny =IF(not_for_profit=1;0;(daycare_share*employees_ny*parent_usage*contribution_pppm*12-state_tax_credit_ny)*0,071)
+
+	let state_tax_shield_ny;
+
+	if (not_for_profit.checked) {
+		state_tax_shield_ny = 0;
+	} else {
+		state_tax_shield_ny = ((daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12) - state_tax_credit_ny) * .071;
+	}
+
+	console.log('state_tax_shield_ny: ' + state_tax_shield_ny);
+
+	//
+
+	let state_tax_credit_sc;
+	let state_tax_credit_ms;
+	let state_tax_credit_nm;
+	let state_tax_credit_ks;
+	let state_tax_credit_ri;
+	let state_tax_credit_other;
+
+	let state_tax_shield_sc;
+	let state_tax_shield_ms;
+	let state_tax_shield_nm;
+	let state_tax_shield_ks;
+	let state_tax_shield_ri;
+	let state_tax_shield_other;
 
 	// state_tax_credit =state_tax_credit_ny+state_tax_credit_sc+state_tax_credit_ms+state_tax_credit_mn+state_tax_credit_nks+state_tax_credit_ri+state_tax_credit_other
 
+	let state_tax_credit;
+
+	state_tax_credit = state_tax_credit_ny + state_tax_credit_sc + state_tax_credit_ms + state_tax_credit_nm + state_tax_credit_ks + state_tax_credit_ri + state_tax_credit_other;
+
+	console.log('state_tax_credit: '+ state_tax_credit);
+
 	// state_tax_shield =state_tax_shield_ny+state_tax_shield_sc+state_tax_shield_ms+state_tax_shield_mn+state_tax_shield_ks+state_tax_shield_ri+state_tax_shield_other
+
+	let state_tax_shield;
+
+	state_tax_shield = state_tax_shield_ny + state_tax_shield_sc + state_tax_shield_ms + state_tax_shield_nm + state_tax_shield_ks + state_tax_shield_ri + state_tax_shield_other;
+
+	console.log('state_tax_shield: '+ state_tax_shield);
 
 	// state_tax_savings =(state_tax_credit+state_tax_shield)/contribution_yearly
 
+	let state_tax_savings;
+
+	state_tax_savings = (state_tax_credit + state_tax_shield) / contribution_yearly;
+
+	console.log('state_tax_savings: '+ state_tax_savings);
+
 	// const tax_benefit = federal_tax_savings + state_tax_savings
+
+	let tax_benefit;
+
+	tax_benefit = federal_tax_savings + state_tax_savings;
+
+	console.log('tax_benefit: '+ tax_benefit);
 
 	// net_cost_pppm =contribution_pppm*(1-tax_benefit)
 
+	let net_cost_pppm;
+
+	net_cost_pppm = contribution_pppm.value * (1 - tax_benefit);
+
+	console.log('net_cost_pppm: '+ net_cost_pppm);
+
 	// net_cost_monthly =parents_participating*net_cost_pppm
+
+	let net_cost_monthly;
+
+	net_cost_monthly = parents_participating * net_cost_pppm;
+
+	console.log('net_cost_monthly: '+ net_cost_monthly);
 
 	// net_cost_yearly =+parents_participating*net_cost_pppm*12
 
+	let net_cost_yearly;
+
+	net_cost_yearly = parents_participating * net_cost_pppm * 12;
+
+	console.log('net_cost_yearly: '+ net_cost_yearly);
+
 	// salary_equivalent_pppm =contribution_pppm*(1+0,0665)
+
+	let salary_equivalent_pppm;
+
+	salary_equivalent_pppm = contribution_pppm * (1 + .0665);
+
+	console.log('salary_equivalent_pppm: '+ salary_equivalent_pppm);
 
 	// salary_equivalent_monthly =salary_equivalent_pppm*parents_participating
 
-	// salary_equivalent_yearly =salary_equivalent_pppm*parents_participating*12
-	
-	//
+	let salary_equivalent_monthly;
 
-	let display = 'display';
+	salary_equivalent_monthly = salary_equivalent_pppm * parents_participating;
+
+	console.log('salary_equivalent_monthly: '+ salary_equivalent_monthly);
+
+	// salary_equivalent_yearly =salary_equivalent_pppm*parents_participating*12
+
+	let salary_equivalent_yearly;
+
+	salary_equivalent_yearly = salary_equivalent_pppm * parents_participating * 12;
+
+	console.log('salary_equivalent_yearly: '+ salary_equivalent_yearly);
 
 	// display
-	tax_benefit_display.innerHTML = display;
+
+	tax_benefit_display.innerHTML = tax_benefit;
 
 	// modal
-	tax_benefit_modal.innerHTML = display;
+
+	tax_benefit_modal.innerHTML = tax_benefit;
 	contribution_pppm_modal.innerHTML =  contribution_pppm.value;
-	federal_tax_savings_modal.innerHTML =  display;
-	state_tax_savings_modal.innerHTML =  display;
-	net_cost_pppm_modal.innerHTML =  display;
-	salary_equivalent_pppm_modal.innerHTML =  display;
+	federal_tax_savings_modal.innerHTML =  federal_tax_savings;
+	state_tax_savings_modal.innerHTML =  state_tax_savings;
+	net_cost_pppm_modal.innerHTML =  net_cost_pppm;
+	salary_equivalent_pppm_modal.innerHTML =  salary_equivalent_pppm;
 
 }
 
