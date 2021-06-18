@@ -80,84 +80,54 @@ state_tax_savings_modal.innerHTML =  '0';
 net_cost_pppm_modal.innerHTML =  '0';
 salary_equivalent_pppm_modal.innerHTML =  '0';
 
-// interaction functions
+// interaction triggers
 
-// not_for_profit.onchange = function() {
-// 	if (not_for_profit.checked) {
-// 		employees_ny.disabled = true;
-// 		employees_sc.disabled = true;
-// 		employees_ms.disabled = true;
-// 		employees_nm.disabled = true;
-// 		employees_ks.disabled = true;
-// 		employees_ri.disabled = true;
-// 		employees_other.disabled = true;
-// 		coverage_zero_to_five.disabled = true;
-// 		coverage_six_to_thirteen.disabled = true;
-// 		coverage_zero_to_five.checked = false;
-// 		coverage_six_to_thirteen.checked = false;
-// 		contribution_pppm.disabled = true;
-// 	} else {
-// 		employees_ny.disabled = false;
-// 		employees_sc.disabled = false;
-// 		employees_ms.disabled = false;
-// 		employees_nm.disabled = false;
-// 		employees_ks.disabled = false;
-// 		employees_ri.disabled = false;
-// 		employees_other.disabled = false;
-// 		coverage_zero_to_five.disabled = false;
-// 		coverage_six_to_thirteen.disabled = false;
-// 		contribution_pppm.disabled = false;
-// 	}
-// }
+not_for_profit.onchange = function() {
+	console.log('modo ONG mudou');
+}
 
-function employees() {
-	const a = parseInt(employees_ny.value, 10);
-	const b = parseInt(employees_sc.value, 10);
-	const c = parseInt(employees_ms.value, 10);
-	const d = parseInt(employees_nm.value, 10);
-	const e = parseInt(employees_ks.value, 10);
-	const f = parseInt(employees_ri.value, 10);
-	const g = parseInt(employees_other.value, 10);
-	const h = a + b + c + d + e + f + g;
-	
-	employees_total_display.value = h;
+employees_ny.oninput = function() {
+	employees();
+	calcTudo();
+}
 
+employees_sc.oninput = function() {
+	employees();
+	calcTudo();
+}
+
+employees_ms.oninput = function() {
+	employees();
+	calcTudo();
+}
+
+employees_nm.oninput = function() {
+	employees();
+	calcTudo();
+}
+
+employees_ks.oninput = function() {
+	employees();
+	calcTudo();
+}
+
+employees_ri.oninput = function() {
+	employees();
+	calcTudo();
+}
+
+employees_other.oninput = function() {
+	employees();
 	calcTudo();
 }
 
 coverage_zero_to_five.onchange = function() {
-	if (coverage_zero_to_five.checked) {
-		coverage_daycare.disabled = false;
-		coverage_nanny.disabled = false;
-		coverage_babysitter.disabled = false;
-	} else {
-		coverage_daycare.disabled = true;
-		coverage_nanny.disabled = true;
-		coverage_babysitter.disabled = true;
-
-		coverage_daycare.checked = false;
-		coverage_nanny.checked = false;
-		coverage_babysitter.checked = false;
-	}
-	
+	zero_to_five();
 	calcTudo();
 }
 
 coverage_six_to_thirteen.onchange = function() {
-	if (coverage_six_to_thirteen.checked) {
-		coverage_nanny.disabled = false;
-		coverage_babysitter.disabled = false;
-		coverage_summer_camp.disabled = false;
-	} else {
-		coverage_nanny.disabled = true;
-		coverage_babysitter.disabled = true;
-		coverage_summer_camp.disabled = true;
-
-		coverage_nanny.checked = false;
-		coverage_babysitter.checked = false;
-		coverage_summer_camp.checked = false;
-	}
-	
+	six_to_thirteen();
 	calcTudo();
 }
 
@@ -179,237 +149,293 @@ coverage_summer_camp.onchange = function() {
 
 contribution_pppm.oninput = function() {
 	contribution_pppm_display.innerHTML = this.value;
-	
 	calcTudo();
 }
 
-function calcTudo() {
+// interaction functions
 
-	// employees
+function notforprofit() {
+	if (not_for_profit.checked) {
+		employees_ny.disabled = true;
+		employees_sc.disabled = true;
+		employees_ms.disabled = true;
+		employees_nm.disabled = true;
+		employees_ks.disabled = true;
+		employees_ri.disabled = true;
+		employees_other.disabled = true;
+		coverage_zero_to_five.disabled = true;
+		coverage_six_to_thirteen.disabled = true;
+		coverage_zero_to_five.checked = false;
+		coverage_six_to_thirteen.checked = false;
+		contribution_pppm.disabled = true;
+	} else {
+		employees_ny.disabled = false;
+		employees_sc.disabled = false;
+		employees_ms.disabled = false;
+		employees_nm.disabled = false;
+		employees_ks.disabled = false;
+		employees_ri.disabled = false;
+		employees_other.disabled = false;
+		coverage_zero_to_five.disabled = false;
+		coverage_six_to_thirteen.disabled = false;
+		contribution_pppm.disabled = false;
+	}
+}
 
-	let employees_total = parseInt(employees_total_display.value, 10);
+function employees() {
+	const a = parseInt(employees_ny.value, 10);
+	const b = parseInt(employees_sc.value, 10);
+	const c = parseInt(employees_ms.value, 10);
+	const d = parseInt(employees_nm.value, 10);
+	const e = parseInt(employees_ks.value, 10);
+	const f = parseInt(employees_ri.value, 10);
+	const g = parseInt(employees_other.value, 10);
+	const h = a + b + c + d + e + f + g;
+	employees_total_display.value = h;
+}
 
-	// FORMULAS
+function zero_to_five() {
+	if (coverage_zero_to_five.checked) {
+		coverage_daycare.disabled = false;
+		coverage_nanny.disabled = false;
+		coverage_babysitter.disabled = false;
+	} else {
+		coverage_daycare.disabled = true;
+		coverage_nanny.disabled = true;
+		coverage_babysitter.disabled = true;
+		coverage_daycare.checked = false;
+		coverage_nanny.checked = false;
+		coverage_babysitter.checked = false;
+	}
+}
 
-	// parent_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
+function six_to_thirteen() {
+	if (coverage_six_to_thirteen.checked) {
+		coverage_nanny.disabled = false;
+		coverage_babysitter.disabled = false;
+		coverage_summer_camp.disabled = false;
+	} else {
+		coverage_nanny.disabled = true;
+		coverage_babysitter.disabled = true;
+		coverage_summer_camp.disabled = true;
+		coverage_nanny.checked = false;
+		coverage_babysitter.checked = false;
+		coverage_summer_camp.checked = false;
+	}
+}
 
-	let parent_usage;
+// calculation variables
 
+let employees_total = employeesTotal();
+let parent_usage = parentUsage();
+let parents_participating = parentsParticipating();
+let daycare_share = daycareShare();
+let contribution_monthly = contributionMonthly();
+let contribution_yearly = contributionYearly();
+let federal_tax_credit = federalTaxCredit();
+let federal_tax_shield = federalTaxShield();
+let federal_tax_savings = federalTaxSavings();
+let state_tax_credit_ny = stateTaxCreditNy();
+let state_tax_shield_ny = stateTaxShieldNy();
+let state_tax_credit_sc = 0;
+let state_tax_credit_ms = 0;
+let state_tax_credit_nm = 0;
+let state_tax_credit_ks = 0;
+let state_tax_credit_ri = 0;
+let state_tax_credit_other = 0;
+let state_tax_shield_sc = 0;
+let state_tax_shield_ms = 0;
+let state_tax_shield_nm = 0;
+let state_tax_shield_ks = 0;
+let state_tax_shield_ri = 0;
+let state_tax_shield_other = 0;
+let state_tax_credit = stateTaxCredit();
+let state_tax_shield = stateTaxShield();
+let state_tax_savings = stateTaxSavings();
+let tax_benefit = taxBenefit();
+let net_cost_pppm = netCostPppm();
+let net_cost_monthly = netCostMonthly();
+let net_cost_yearly = netCostYearly();
+let salary_equivalent_pppm = salaryEquivalentPppm();
+let salary_equivalent_monthly = salaryEquivalentMonthly();
+let salary_equivalent_yearly = salaryEquivalentYearly();
+
+// calculation functions
+
+function employeesTotal() {
+	return parseInt(employees_total_display.value, 10);
+}
+
+function parentUsage() {
 	if (coverage_zero_to_five.checked && coverage_six_to_thirteen.checked) {
-		parent_usage = .2;
+		return .2;
 	} else if (coverage_zero_to_five.checked || coverage_six_to_thirteen.checked) {
-		parent_usage = .1;
+		return .1;
 	} else {
-		parent_usage = 0;
+		return 0;
 	}
+}
 
-	console.log('parent_usage: ' + parent_usage);
+function parentsParticipating() {
+	return parent_usage * employees_total;
+}
 
-	// parents_participating =parent_usage*employees_total
-
-	let parents_participating = parent_usage * employees_total;
-	
-	console.log('parents_participating: ' + parents_participating);
-
-	// daycare_share =IF(coverage_daycare=0;0;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=0);1;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=1);0,3;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=1);0,5;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=0);0,5;IF(coverage_summer_camp=1;0,4;0,6))))))
-
-	let daycare_share = 0;
-
+function daycareShare() {
 	if (!coverage_daycare.checked) {
-		daycare_share = 0;
+		return 0;
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && !coverage_summer_camp.checked) {
-		daycare_share = 1;
+		return 1;
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && coverage_summer_camp.checked) {
-		daycare_share = .3;
+		return .3;
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && coverage_summer_camp.checked) {
-		daycare_share = .5;
+		return .5;
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && !coverage_summer_camp.checked) {
-		daycare_share = .5;
+		return .5;
 	} else if (coverage_summer_camp.checked) {
-		daycare_share = .4;
+		return .4;
 	} else {
-		daycare_share = .6;
+		return .6;
 	};
+}
 
-	console.log('NOVO daycare_share: ' + daycare_share);
+function contributionMonthly() {
+	return parents_participating * contribution_pppm.value;
+}
 
-	// contribution_monthly = parents_participating * contribution_pppm
+function contributionYearly() {
+	return parents_participating * contribution_pppm.value * 12;
+}
 
-	let contribution_monthly = parents_participating * contribution_pppm.value;
+function federalTaxCredit() {
+	if (not_for_profit.checked) {
+		return 0;
+	} else {
+		return Math.min(daycare_share * parents_participating * contribution_pppm.value * 12 * .25, 150000);
+	};
+}
 
+function federalTaxShield() {
+	if (not_for_profit.checked) {
+		return 0;
+	} else {
+		return ((daycare_share * parents_participating * contribution_pppm.value * 12) - federal_tax_credit) * .21;
+	}
+}
+
+function federalTaxSavings() {
+	return (federal_tax_credit + federal_tax_shield) / contribution_yearly;
+}
+
+function stateTaxCreditNy() {
+	if (not_for_profit.checked) {
+		return 0;
+	} else {
+		return Math.min(daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12 * .25, 150000);
+	}
+}
+
+function stateTaxShieldNy() {
+	if (not_for_profit.checked) {
+		return 0;
+	} else {
+		return ((daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12) - state_tax_credit_ny) * .071;
+	}
+}
+
+function stateTaxCredit() {
+	return state_tax_credit_ny + state_tax_credit_sc + state_tax_credit_ms + state_tax_credit_nm + state_tax_credit_ks + state_tax_credit_ri + state_tax_credit_other;
+}
+
+function stateTaxShield() {
+	return state_tax_shield_ny + state_tax_shield_sc + state_tax_shield_ms + state_tax_shield_nm + state_tax_shield_ks + state_tax_shield_ri + state_tax_shield_other;
+}
+
+function stateTaxSavings() {
+	return (state_tax_credit + state_tax_shield) / contribution_yearly;
+}
+
+function taxBenefit() {
+	return federal_tax_savings + state_tax_savings;
+}
+
+function netCostPppm() {
+	return contribution_pppm.value * (1 - tax_benefit);
+}
+
+function netCostMonthly() {
+	return parents_participating * net_cost_pppm;
+}
+
+function netCostYearly() {
+	return parents_participating * net_cost_pppm * 12;
+}
+
+function salaryEquivalentPppm() {
+	return contribution_pppm.value * (1 + .0665);
+}
+
+function salaryEquivalentMonthly() {
+	return salary_equivalent_pppm * parents_participating;
+}
+
+function salaryEquivalentYearly() {
+	return salary_equivalent_pppm * parents_participating * 12;
+}
+
+function printa() {
+	employees_total = employeesTotal();
+	parent_usage = parentUsage();
+	parents_participating = parentsParticipating();
+	daycare_share = daycareShare();
+	contribution_monthly = contributionMonthly();
+	contribution_yearly = contributionYearly();
+	federal_tax_credit = federalTaxCredit();
+	federal_tax_shield = federalTaxShield();
+	federal_tax_savings = federalTaxSavings();
+	state_tax_credit_ny = stateTaxCreditNy();
+	state_tax_shield_ny = stateTaxShieldNy();
+	state_tax_credit = stateTaxCredit();
+	state_tax_shield = stateTaxShield();
+	state_tax_savings = stateTaxSavings();
+	tax_benefit = taxBenefit();
+	net_cost_pppm = netCostPppm();
+	net_cost_monthly = netCostMonthly();
+	net_cost_yearly = netCostYearly();
+	salary_equivalent_pppm = salaryEquivalentPppm();
+	salary_equivalent_monthly = salaryEquivalentMonthly();
+	salary_equivalent_yearly = salaryEquivalentYearly();
+	console.log('employees_total: ' + employees_total);
+	console.log('parent_usage: ' + parent_usage);
+	console.log('parents_participating: ' + parents_participating);
+	console.log('daycare_share: ' + daycare_share);
 	console.log('contribution_monthly: ' + contribution_monthly);
-
-	// contribution_yearly = parents_participating * contribution_pppm * 12
-
-	let contribution_yearly = parents_participating * contribution_pppm.value * 12
-
 	console.log('contribution_yearly: ' + contribution_yearly);
-
-	// federal_tax_credit =IF(not_for_profit=1;0;MIN(daycare_share*parents_participating*contribution_pppm*12*0,25;150000))
-
-	let federal_tax_credit;
-
-	if (not_for_profit.checked) {
-		federal_tax_credit = 0;
-	} else {
-		federal_tax_credit = parseInt(Math.min(daycare_share * parents_participating * contribution_pppm.value * 12 * .25, 150000), 10);;
-	};
-
 	console.log('federal_tax_credit: ' + federal_tax_credit);
-
-	// federal_tax_shield =IF(not_for_profit=1;0;(daycare_share*parents_participating*contribution_pppm*12-federal_tax_credit)*0,21)
-
-	let federal_tax_shield;
-
-	if (not_for_profit.checked) {
-		federal_tax_shield = 0;
-	} else {
-		federal_tax_shield = parseInt(((daycare_share * parents_participating * contribution_pppm.value * 12) - federal_tax_credit) * .21, 10);;
-	}
-
 	console.log('federal_tax_shield: ' + federal_tax_shield);
-
-	// federal_tax_savings =(federal_tax_credit + federal_tax_sh0ield) / contribution_yearly
-
-	let federal_tax_savings;
-
-	federal_tax_savings = (federal_tax_credit + federal_tax_shield) / contribution_yearly;
-
 	console.log('federal_tax_savings: ' + federal_tax_savings);
-
-	// state_tax_credit_ny =IF(not_for_profit=1;0;MIN(daycare_share*employees_ny*parent_usage*contribution_pppm*12*0,25;150000))
-
-	let state_tax_credit_ny;
-
-	if (not_for_profit.checked) {
-		state_tax_credit_ny = 0;
-	} else {
-		state_tax_credit_ny = Math.min(daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12 * .25, 150000);
-	}
-
 	console.log('state_tax_credit_ny: ' + state_tax_credit_ny);
-
-	// state_tax_shield_ny =IF(not_for_profit=1;0;(daycare_share*employees_ny*parent_usage*contribution_pppm*12-state_tax_credit_ny)*0,071)
-
-	let state_tax_shield_ny;
-
-	if (not_for_profit.checked) {
-		state_tax_shield_ny = 0;
-	} else {
-		state_tax_shield_ny = ((daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12) - state_tax_credit_ny) * .071;
-	}
-
 	console.log('state_tax_shield_ny: ' + state_tax_shield_ny);
+	console.log('state_tax_credit: ' + state_tax_credit);
+	console.log('state_tax_shield: ' + state_tax_shield);
+	console.log('state_tax_savings: ' + state_tax_savings);
+	console.log('tax_benefit: ' + tax_benefit);
+	console.log('net_cost_pppm: ' + net_cost_pppm);
+	console.log('net_cost_monthly: ' + net_cost_monthly);
+	console.log('net_cost_yearly: ' + net_cost_yearly);
+	console.log('salary_equivalent_pppm: ' + salary_equivalent_pppm);
+	console.log('salary_equivalent_monthly: ' + salary_equivalent_monthly);
+	console.log('salary_equivalent_yearly: ' + salary_equivalent_yearly);
+}
 
-	//
-
-	let state_tax_credit_sc = 0;
-	let state_tax_credit_ms = 0;
-	let state_tax_credit_nm = 0;
-	let state_tax_credit_ks = 0;
-	let state_tax_credit_ri = 0;
-	let state_tax_credit_other = 0;
-
-	let state_tax_shield_sc = 0;
-	let state_tax_shield_ms = 0;
-	let state_tax_shield_nm = 0;
-	let state_tax_shield_ks = 0;
-	let state_tax_shield_ri = 0;
-	let state_tax_shield_other = 0;
-
-	// state_tax_credit =state_tax_credit_ny+state_tax_credit_sc+state_tax_credit_ms+state_tax_credit_mn+state_tax_credit_nks+state_tax_credit_ri+state_tax_credit_other
-
-	let state_tax_credit;
-
-	state_tax_credit = state_tax_credit_ny + state_tax_credit_sc + state_tax_credit_ms + state_tax_credit_nm + state_tax_credit_ks + state_tax_credit_ri + state_tax_credit_other;
-
-	console.log('state_tax_credit: '+ state_tax_credit);
-
-	// state_tax_shield =state_tax_shield_ny+state_tax_shield_sc+state_tax_shield_ms+state_tax_shield_mn+state_tax_shield_ks+state_tax_shield_ri+state_tax_shield_other
-
-	let state_tax_shield;
-
-	state_tax_shield = state_tax_shield_ny + state_tax_shield_sc + state_tax_shield_ms + state_tax_shield_nm + state_tax_shield_ks + state_tax_shield_ri + state_tax_shield_other;
-
-	console.log('state_tax_shield: '+ state_tax_shield);
-
-	// state_tax_savings =(state_tax_credit+state_tax_shield)/contribution_yearly
-
-	let state_tax_savings;
-
-	state_tax_savings = (state_tax_credit + state_tax_shield) / contribution_yearly;
-
-	console.log('state_tax_savings: '+ state_tax_savings);
-
-	// const tax_benefit = federal_tax_savings + state_tax_savings
-
-	let tax_benefit;
-
-	tax_benefit = federal_tax_savings + state_tax_savings;
-
-	console.log('tax_benefit: '+ tax_benefit);
-
-	// net_cost_pppm =contribution_pppm*(1-tax_benefit)
-
-	let net_cost_pppm;
-
-	net_cost_pppm = contribution_pppm.value * (1 - tax_benefit);
-
-	console.log('net_cost_pppm: '+ net_cost_pppm);
-
-	// net_cost_monthly =parents_participating*net_cost_pppm
-
-	let net_cost_monthly;
-
-	net_cost_monthly = parents_participating * net_cost_pppm;
-
-	console.log('net_cost_monthly: '+ net_cost_monthly);
-
-	// net_cost_yearly =+parents_participating*net_cost_pppm*12
-
-	let net_cost_yearly;
-
-	net_cost_yearly = parents_participating * net_cost_pppm * 12;
-
-	console.log('net_cost_yearly: '+ net_cost_yearly);
-
-	// salary_equivalent_pppm =contribution_pppm*(1+0,0665)
-
-	let salary_equivalent_pppm;
-
-	salary_equivalent_pppm = contribution_pppm * (1 + .0665);
-
-	console.log('salary_equivalent_pppm: '+ salary_equivalent_pppm);
-
-	// salary_equivalent_monthly =salary_equivalent_pppm*parents_participating
-
-	let salary_equivalent_monthly;
-
-	salary_equivalent_monthly = salary_equivalent_pppm * parents_participating;
-
-	console.log('salary_equivalent_monthly: '+ salary_equivalent_monthly);
-
-	// salary_equivalent_yearly =salary_equivalent_pppm*parents_participating*12
-
-	let salary_equivalent_yearly;
-
-	salary_equivalent_yearly = salary_equivalent_pppm * parents_participating * 12;
-
-	console.log('salary_equivalent_yearly: '+ salary_equivalent_yearly);
-
-	// display
-
-	tax_benefit_display.innerHTML = tax_benefit;
-
-	// modal
-
-	tax_benefit_modal.innerHTML = tax_benefit;
+function calcTudo() {
+	const display = 'display';
+	tax_benefit_display.innerHTML = display;
+	tax_benefit_modal.innerHTML = display;
 	contribution_pppm_modal.innerHTML =  contribution_pppm.value;
-	federal_tax_savings_modal.innerHTML =  federal_tax_savings;
-	state_tax_savings_modal.innerHTML =  state_tax_savings;
-	net_cost_pppm_modal.innerHTML =  net_cost_pppm;
-	salary_equivalent_pppm_modal.innerHTML =  salary_equivalent_pppm;
-
+	federal_tax_savings_modal.innerHTML =  display;
+	state_tax_savings_modal.innerHTML =  display;
+	net_cost_pppm_modal.innerHTML =  display;
+	salary_equivalent_pppm_modal.innerHTML =  display;
 }
 
 // interaction experience fixes
