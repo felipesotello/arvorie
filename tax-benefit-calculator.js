@@ -224,17 +224,13 @@ coverage_zero_to_five.onchange = function() {
 		a = 0;
 	};
 
-	console.log(a);
-
 	if (coverage_six_to_thirteen.checked = true) {
 		b = .1;
 	} else {
 		b = 0;
 	};
 	
-	console.log(b);
-
-	console.log(a + b);
+	parent_usage = a + b;
 }
 
 // parents_participating =F26*employees_total
