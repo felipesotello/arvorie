@@ -132,7 +132,6 @@ coverage_zero_to_five.onchange = function() {
 		coverage_nanny.disabled = false;
 		coverage_babysitter.disabled = false;
 		calcTudo();
-		parent_usage;
 	} else {
 		console.log('coverage_zero_to_five está inativo');
 		coverage_daycare.disabled = true;
@@ -142,7 +141,6 @@ coverage_zero_to_five.onchange = function() {
 		coverage_nanny.checked = false;
 		coverage_babysitter.checked = false;
 		calcTudo();
-		parent_usage;
 	}
 }
 
@@ -153,7 +151,6 @@ coverage_six_to_thirteen.onchange = function() {
 		coverage_babysitter.disabled = false;
 		coverage_summer_camp.disabled = false;
 		calcTudo();
-		parent_usage;
 	} else {
 		console.log('coverage_six_to_thirteen está inativo');
 		coverage_nanny.disabled = true;
@@ -163,7 +160,6 @@ coverage_six_to_thirteen.onchange = function() {
 		coverage_babysitter.checked = false;
 		coverage_summer_camp.checked = false;
 		calcTudo();
-		parent_usage;
 	}
 }
 
