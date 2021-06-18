@@ -193,7 +193,7 @@ function calcTudo() {
 
 	// employees
 
-	let employees_total = parseInt(employees_total.value, 10);
+	let employees_total = parseInt(employees_total_display.value, 10);
 
 	// coverage
 
