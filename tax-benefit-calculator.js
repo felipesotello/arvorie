@@ -434,7 +434,7 @@ function calcTudo() {
 	const display = 'display';
 	tax_benefit_display.innerHTML = display;
 	tax_benefit_modal.innerHTML = display;
-	contribution_pppm_modal.innerHTML =  contributionPppm;
+	contribution_pppm_modal.innerHTML =  display;
 	federal_tax_savings_modal.innerHTML =  display;
 	state_tax_savings_modal.innerHTML =  display;
 	net_cost_pppm_modal.innerHTML =  display;
