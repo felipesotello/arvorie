@@ -216,7 +216,7 @@ contribution_pppm.oninput = function() {
 
 // parents_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
 
-coverage_zero_to_five.onchage = function {
+coverage_zero_to_five.onchage = function() {
 	let a;
 	let b;
 
