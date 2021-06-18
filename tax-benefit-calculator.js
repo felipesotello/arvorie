@@ -231,25 +231,25 @@ function calcTudo() {
 
 	if (!coverage_daycare.checked) {
 		daycare_share = 0;
-		console.log('daycare_share: ' + daycare_share);
+		console.log('share of daycare: ' + daycare_share);
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = 1;
-		console.log('daycare_share: ' + daycare_share);
+		console.log('share of daycare: ' + daycare_share);
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && coverage_summer_camp.checked) {
 		daycare_share = .3;
-		console.log('daycare_share: ' + daycare_share);
+		console.log('share of daycare: ' + daycare_share);
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && coverage_summer_camp.checked) {
 		daycare_share = .5;
-		console.log('daycare_share: ' + daycare_share);
+		console.log('share of daycare: ' + daycare_share);
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = .5;
-		console.log('daycare_share: ' + daycare_share);
+		console.log('share of daycare: ' + daycare_share);
 	} else if (coverage_summer_camp.checked) {
 		daycare_share = .4;
-		console.log('daycare_share: ' + daycare_share);
+		console.log('share of daycare: ' + daycare_share);
 	} else {
 		daycare_share = .6;
-		console.log('daycare_share: ' + daycare_share);
+		console.log('share of daycare: ' + daycare_share);
 	};
 
 	// contribution_monthly = parents_participating * contribution_pppm
