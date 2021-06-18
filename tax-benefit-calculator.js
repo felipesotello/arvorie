@@ -288,16 +288,18 @@ function calcTudo() {
 	
 	//
 
+	let display = 'display';
+
 	// display
-	tax_benefit_display.innerHTML = a;
+	tax_benefit_display.innerHTML = display;
 
 	// modal
-	tax_benefit_modal.innerHTML = a;
+	tax_benefit_modal.innerHTML = display;
 	contribution_pppm_modal.innerHTML =  contribution_pppm.value;
-	federal_tax_savings_modal.innerHTML =  a;
-	state_tax_savings_modal.innerHTML =  a;
-	net_cost_pppm_modal.innerHTML =  a;
-	salary_equivalent_pppm_modal.innerHTML =  a;
+	federal_tax_savings_modal.innerHTML =  display;
+	state_tax_savings_modal.innerHTML =  display;
+	net_cost_pppm_modal.innerHTML =  display;
+	salary_equivalent_pppm_modal.innerHTML =  display;
 
 }
 
