@@ -214,7 +214,7 @@ contribution_pppm.oninput = function() {
 
 let parent_usage;
 
-coverage_zero_to_five.onchage = function() {
+coverage_zero_to_five.onchange = function() {
 	let a;
 	let b;
 
