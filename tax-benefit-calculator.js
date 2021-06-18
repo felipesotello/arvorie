@@ -85,30 +85,30 @@ salary_equivalent_pppm_modal.innerHTML =  '0';
 not_for_profit.onchange = function() {
 	if (not_for_profit.checked) {
 		// console.log('modo ONG ativado');
-		employees_ny.disabled = true;
-		employees_sc.disabled = true;
-		employees_ms.disabled = true;
-		employees_nm.disabled = true;
-		employees_ks.disabled = true;
-		employees_ri.disabled = true;
-		employees_other.disabled = true;
-		coverage_zero_to_five.disabled = true;
-		coverage_six_to_thirteen.disabled = true;
-		coverage_zero_to_five.checked = false;
-		coverage_six_to_thirteen.checked = false;
-		contribution_pppm.disabled = true;
+		// employees_ny.disabled = true;
+		// employees_sc.disabled = true;
+		// employees_ms.disabled = true;
+		// employees_nm.disabled = true;
+		// employees_ks.disabled = true;
+		// employees_ri.disabled = true;
+		// employees_other.disabled = true;
+		// coverage_zero_to_five.disabled = true;
+		// coverage_six_to_thirteen.disabled = true;
+		// coverage_zero_to_five.checked = false;
+		// coverage_six_to_thirteen.checked = false;
+		// contribution_pppm.disabled = true;
 	} else {
 		// console.log('modo ONG desativado');
-		employees_ny.disabled = false;
-		employees_sc.disabled = false;
-		employees_ms.disabled = false;
-		employees_nm.disabled = false;
-		employees_ks.disabled = false;
-		employees_ri.disabled = false;
-		employees_other.disabled = false;
-		coverage_zero_to_five.disabled = false;
-		coverage_six_to_thirteen.disabled = false;
-		contribution_pppm.disabled = false;
+		// employees_ny.disabled = false;
+		// employees_sc.disabled = false;
+		// employees_ms.disabled = false;
+		// employees_nm.disabled = false;
+		// employees_ks.disabled = false;
+		// employees_ri.disabled = false;
+		// employees_other.disabled = false;
+		// coverage_zero_to_five.disabled = false;
+		// coverage_six_to_thirteen.disabled = false;
+		// contribution_pppm.disabled = false;
 	}
 }
 
@@ -216,7 +216,6 @@ let parent_usage;
 
 coverage_zero_to_five.onchange = function() {
 	let a;
-	let b;
 
 	if (coverage_zero_to_five.checked = true) {
 		a = .1;
@@ -224,13 +223,7 @@ coverage_zero_to_five.onchange = function() {
 		a = 0;
 	};
 
-	if (coverage_six_to_thirteen.checked = true) {
-		b = .1;
-	} else {
-		b = 0;
-	};
-	
-	parent_usage = a + b;
+	console.log(a);
 }
 
 // parents_participating =F26*employees_total
