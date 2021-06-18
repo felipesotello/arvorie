@@ -84,13 +84,13 @@ salary_equivalent_pppm_modal.innerHTML =  '0';
 
 // not_for_profit.onchange = companyType();
 
-employees_ny.oninput = employees();
-employees_sc.oninput = employees();
-employees_ms.oninput = employees();
-employees_nm.oninput = employees();
-employees_ks.oninput = employees();
-employees_ri.oninput = employees();
-employees_other.oninput = employees();
+// employees_ny.oninput = employees();
+// employees_sc.oninput = employees();
+// employees_ms.oninput = employees();
+// employees_nm.oninput = employees();
+// employees_ks.oninput = employees();
+// employees_ri.oninput = employees();
+// employees_other.oninput = employees();
 
 coverage_zero_to_five.onchange = zero_to_five();
 coverage_six_to_thirteen.onchange = six_to_thirteen();
