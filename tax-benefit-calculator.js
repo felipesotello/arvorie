@@ -84,7 +84,7 @@ salary_equivalent_pppm_modal.innerHTML =  '0';
 
 not_for_profit.onchange = function() {
 	if (not_for_profit.checked) {
-		console.log('modo ONG ativado');
+		// console.log('modo ONG ativado');
 		employees_ny.disabled = true;
 		employees_sc.disabled = true;
 		employees_ms.disabled = true;
@@ -98,7 +98,7 @@ not_for_profit.onchange = function() {
 		coverage_six_to_thirteen.checked = false;
 		contribution_pppm.disabled = true;
 	} else {
-		console.log('modo ONG desativado');
+		// console.log('modo ONG desativado');
 		employees_ny.disabled = false;
 		employees_sc.disabled = false;
 		employees_ms.disabled = false;
@@ -127,13 +127,13 @@ function employees() {
 
 coverage_zero_to_five.onchange = function() {
 	if (coverage_zero_to_five.checked) {
-		console.log('coverage_zero_to_five está ativo');
+		// console.log('coverage_zero_to_five está ativo');
 		coverage_daycare.disabled = false;
 		coverage_nanny.disabled = false;
 		coverage_babysitter.disabled = false;
 		calcTudo();
 	} else {
-		console.log('coverage_zero_to_five está inativo');
+		// console.log('coverage_zero_to_five está inativo');
 		coverage_daycare.disabled = true;
 		coverage_nanny.disabled = true;
 		coverage_babysitter.disabled = true;
@@ -146,13 +146,13 @@ coverage_zero_to_five.onchange = function() {
 
 coverage_six_to_thirteen.onchange = function() {
 	if (coverage_six_to_thirteen.checked) {
-		console.log('coverage_six_to_thirteen está ativo');
+		// console.log('coverage_six_to_thirteen está ativo');
 		coverage_nanny.disabled = false;
 		coverage_babysitter.disabled = false;
 		coverage_summer_camp.disabled = false;
 		calcTudo();
 	} else {
-		console.log('coverage_six_to_thirteen está inativo');
+		// console.log('coverage_six_to_thirteen está inativo');
 		coverage_nanny.disabled = true;
 		coverage_babysitter.disabled = true;
 		coverage_summer_camp.disabled = true;
@@ -165,40 +165,40 @@ coverage_six_to_thirteen.onchange = function() {
 
 coverage_daycare.onchange = function() {
 	if (coverage_daycare.checked) {
-		console.log('coverage_daycare está ativo');
+		// console.log('coverage_daycare está ativo');
 		calcTudo();
 	} else {
-		console.log('coverage_daycare está inativo');
+		// console.log('coverage_daycare está inativo');
 		calcTudo();
 	}
 }
 
 coverage_nanny.onchange = function() {
 	if (coverage_nanny.checked) {
-		console.log('coverage_nanny está ativo');
+		// console.log('coverage_nanny está ativo');
 		calcTudo();
 	} else {
-		console.log('coverage_nanny está inativo');
+		// console.log('coverage_nanny está inativo');
 		calcTudo();
 	}
 }
 
 coverage_babysitter.onchange = function() {
 	if (coverage_babysitter.checked) {
-		console.log('coverage_babysitter está ativo');
+		// console.log('coverage_babysitter está ativo');
 		calcTudo();
 	} else {
-		console.log('coverage_babysitter está inativo');
+		// console.log('coverage_babysitter está inativo');
 		calcTudo();
 	}
 }
 
 coverage_summer_camp.onchange = function() {
 	if (coverage_summer_camp.checked) {
-		console.log('coverage_summer_camp está ativo');
+		// console.log('coverage_summer_camp está ativo');
 		calcTudo();
 	} else {
-		console.log('coverage_summer_camp está inativo');
+		// console.log('coverage_summer_camp está inativo');
 		calcTudo();
 	}
 }
@@ -211,6 +211,8 @@ contribution_pppm.oninput = function() {
 // formulas
 
 // parents_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
+
+let parent_usage;
 
 coverage_zero_to_five.onchage = function() {
 	let a;
@@ -281,13 +283,13 @@ function calcTudo() {
 	
 	// employees
 	const a = parseInt(employees_total.value, 10);
-	console.log('total employees in the u.s. is ' + a);
+	// console.log('total employees in the u.s. is ' + a);
 	
 	// coverage
 	if (coverage_zero_to_five.checked) {
-		console.log('coverage_zero_to_five DENTRO da conta!');
+		// console.log('coverage_zero_to_five DENTRO da conta!');
 	} else {
-		console.log('coverage_zero_to_five FORA da conta!');
+		// console.log('coverage_zero_to_five FORA da conta!');
 	}
 
 	// contribution
