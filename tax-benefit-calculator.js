@@ -216,32 +216,11 @@ contribution_pppm.oninput = function() {
 
 // parents_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
 
-const parent_usage = function() {
-	const a = function() {
-		if (coverage_zero_to_five.check = true) {
-			return .1;
-		} else {
-			return 0;
-		}
-	};
-	console.log(a);
 
-	const b = function() {
-		if (coverage_six_to_thirteen.check = true) {
-			return .1;
-		} else {
-			return 0;
-		}
-	};
-	console.log(b);
-
-	console.log(a + b);
-	return a + b;
-}
 
 // parents_participating =F26*employees_total
 
-const parents_participating = parents_usage * employees_total;
+// const parents_participating = parents_usage * employees_total;
 
 // daycare_share =IF(coverage_daycare=0;0;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=0);1;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=1);0,3;IF(AND(coverage_nanny=0;coverage_babysitter=0;coverage_summer_camp=1);0,5;IF(AND(coverage_nanny=1;coverage_babysitter=1;coverage_summer_camp=0);0,5;IF(coverage_summer_camp=1;0,4;0,6))))))
 
