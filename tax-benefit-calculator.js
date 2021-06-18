@@ -216,7 +216,7 @@ function calcTudo() {
 	let daycare_share = 0;
 
 	if (!coverage_daycare.checked) {
-		daycare_share = parseInt(0, 10);
+		daycare_share = 0;
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = 1;
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && coverage_summer_camp.checked) {
@@ -231,7 +231,7 @@ function calcTudo() {
 		daycare_share = .6;
 	};
 
-	console.log('daycare_share: ' + daycare_share);
+	console.log('NOVO daycare_share: ' + daycare_share);
 
 	// contribution_monthly = parents_participating * contribution_pppm
 
