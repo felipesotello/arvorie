@@ -82,35 +82,35 @@ salary_equivalent_pppm_modal.innerHTML =  '0';
 
 // interaction functions
 
-not_for_profit.onchange = function() {
-	if (not_for_profit.checked) {
-		// console.log('modo ONG ativado');
-		// employees_ny.disabled = true;
-		// employees_sc.disabled = true;
-		// employees_ms.disabled = true;
-		// employees_nm.disabled = true;
-		// employees_ks.disabled = true;
-		// employees_ri.disabled = true;
-		// employees_other.disabled = true;
-		// coverage_zero_to_five.disabled = true;
-		// coverage_six_to_thirteen.disabled = true;
-		// coverage_zero_to_five.checked = false;
-		// coverage_six_to_thirteen.checked = false;
-		// contribution_pppm.disabled = true;
-	} else {
-		// console.log('modo ONG desativado');
-		// employees_ny.disabled = false;
-		// employees_sc.disabled = false;
-		// employees_ms.disabled = false;
-		// employees_nm.disabled = false;
-		// employees_ks.disabled = false;
-		// employees_ri.disabled = false;
-		// employees_other.disabled = false;
-		// coverage_zero_to_five.disabled = false;
-		// coverage_six_to_thirteen.disabled = false;
-		// contribution_pppm.disabled = false;
-	}
-}
+// not_for_profit.onchange = function() {
+// 	if (not_for_profit.checked) {
+// 		console.log('modo ONG ativado');
+// 		employees_ny.disabled = true;
+// 		employees_sc.disabled = true;
+// 		employees_ms.disabled = true;
+// 		employees_nm.disabled = true;
+// 		employees_ks.disabled = true;
+// 		employees_ri.disabled = true;
+// 		employees_other.disabled = true;
+// 		coverage_zero_to_five.disabled = true;
+// 		coverage_six_to_thirteen.disabled = true;
+// 		coverage_zero_to_five.checked = false;
+// 		coverage_six_to_thirteen.checked = false;
+// 		contribution_pppm.disabled = true;
+// 	} else {
+// 		console.log('modo ONG desativado');
+// 		employees_ny.disabled = false;
+// 		employees_sc.disabled = false;
+// 		employees_ms.disabled = false;
+// 		employees_nm.disabled = false;
+// 		employees_ks.disabled = false;
+// 		employees_ri.disabled = false;
+// 		employees_other.disabled = false;
+// 		coverage_zero_to_five.disabled = false;
+// 		coverage_six_to_thirteen.disabled = false;
+// 		contribution_pppm.disabled = false;
+// 	}
+// }
 
 function employees() {
 	const a = parseInt(employees_ny.value, 10);
@@ -212,19 +212,19 @@ contribution_pppm.oninput = function() {
 
 // parents_usage =SUM(IF(coverage_zero_to_five=1;0,1;0);IF(coverage_six_to_thirteen=1;0,1;0))
 
-let parent_usage;
+// let parent_usage;
 
-coverage_zero_to_five.onchange = function() {
-	let a;
+// coverage_zero_to_five.onchange = function() {
+// 	let a;
 
-	if (coverage_zero_to_five.checked = true) {
-		a = .1;
-	} else {
-		a = 0;
-	};
+// 	if (coverage_zero_to_five.checked = true) {
+// 		a = .1;
+// 	} else {
+// 		a = 0;
+// 	};
 
-	console.log(a);
-}
+// 	console.log(a);
+// }
 
 // parents_participating =F26*employees_total
 
@@ -275,11 +275,11 @@ function calcTudo() {
 	// console.log('total employees in the u.s. is ' + a);
 	
 	// coverage
-	if (coverage_zero_to_five.checked) {
-		// console.log('coverage_zero_to_five DENTRO da conta!');
-	} else {
-		// console.log('coverage_zero_to_five FORA da conta!');
-	}
+	// if (coverage_zero_to_five.checked) {
+	// 	console.log('coverage_zero_to_five DENTRO da conta!');
+	// } else {
+	// 	console.log('coverage_zero_to_five FORA da conta!');
+	// }
 
 	// contribution
 
