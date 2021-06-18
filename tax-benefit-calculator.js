@@ -226,6 +226,9 @@ function six_to_thirteen() {
 
 // calculation variables
 
+let employeesNy = parseInt(employees_ny.value, 10);
+let contributionPppm = parseInt(contribution_pppm.value, 10);
+
 let employees_total = employeesTotal();
 let parent_usage = parentUsage();
 let parents_participating = parentsParticipating();
@@ -261,9 +264,6 @@ let salary_equivalent_monthly = salaryEquivalentMonthly();
 let salary_equivalent_yearly = salaryEquivalentYearly();
 
 // calculation functions
-
-let employeesNy = parseInt(employees_ny.value, 10);
-let contributionPppm = parseInt(contribution_pppm.value, 10);
 
 function employeesTotal() {
 	return parseInt(employees_total_display.value, 10);
