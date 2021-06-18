@@ -262,6 +262,9 @@ let salary_equivalent_yearly = salaryEquivalentYearly();
 
 // calculation functions
 
+let employeesNy = parseInt(employees_ny.value, 10);
+let contributionPppm = parseInt(contribution_pppm.value, 10);
+
 function employeesTotal() {
 	return parseInt(employees_total_display.value, 10);
 }
@@ -299,18 +302,18 @@ function daycareShare() {
 }
 
 function contributionMonthly() {
-	return parents_participating * contribution_pppm.value;
+	return parents_participating * contributionPppm;
 }
 
 function contributionYearly() {
-	return parents_participating * contribution_pppm.value * 12;
+	return parents_participating * contributionPppm * 12;
 }
 
 function federalTaxCredit() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * parents_participating * contribution_pppm.value * 12 * .25, 150000);
+		return Math.min(daycare_share * parents_participating * contributionPppm * 12 * .25, 150000);
 	};
 }
 
@@ -318,7 +321,7 @@ function federalTaxShield() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return ((daycare_share * parents_participating * contribution_pppm.value * 12) - federal_tax_credit) * .21;
+		return ((daycare_share * parents_participating * contributionPppm * 12) - federal_tax_credit) * .21;
 	}
 }
 
@@ -330,7 +333,7 @@ function stateTaxCreditNy() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12 * .25, 150000);
+		return Math.min(daycare_share * employeesNy * parent_usage * contributionPppm * 12 * .25, 150000);
 	}
 }
 
@@ -338,7 +341,7 @@ function stateTaxShieldNy() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return ((daycare_share * employees_ny * parent_usage * contribution_pppm.value * 12) - state_tax_credit_ny) * .071;
+		return ((daycare_share * employeesNy * parent_usage * contributionPppm * 12) - state_tax_credit_ny) * .071;
 	}
 }
 
@@ -359,7 +362,7 @@ function taxBenefit() {
 }
 
 function netCostPppm() {
-	return contribution_pppm.value * (1 - tax_benefit);
+	return contributionPppm * (1 - tax_benefit);
 }
 
 function netCostMonthly() {
@@ -371,7 +374,7 @@ function netCostYearly() {
 }
 
 function salaryEquivalentPppm() {
-	return contribution_pppm.value * (1 + .0665);
+	return contributionPppm * (1 + .0665);
 }
 
 function salaryEquivalentMonthly() {
@@ -431,7 +434,7 @@ function calcTudo() {
 	const display = 'display';
 	tax_benefit_display.innerHTML = display;
 	tax_benefit_modal.innerHTML = display;
-	contribution_pppm_modal.innerHTML =  contribution_pppm.value;
+	contribution_pppm_modal.innerHTML =  contributionPppm;
 	federal_tax_savings_modal.innerHTML =  display;
 	state_tax_savings_modal.innerHTML =  display;
 	net_cost_pppm_modal.innerHTML =  display;
