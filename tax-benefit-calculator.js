@@ -90,6 +90,10 @@ not_for_profit.onchange = function() {
 		employees_ks.disabled = true;
 		employees_ri.disabled = true;
 		employees_other.disabled = true;
+
+		coverage_zero_to_five.checked = false;
+		coverage_six_to_thirteen.checked = false;
+		
 		coverage_zero_to_five.disabled = true;
 		coverage_six_to_thirteen.disabled = true;
 		coverage_daycare.disabled = true;
@@ -143,6 +147,9 @@ coverage_zero_to_five.onchange = function() {
 		coverage_daycare.disabled = true;
 		coverage_nanny.disabled = true;
 		coverage_babysitter.disabled = true;
+		coverage_daycare.checked = false;
+		coverage_nanny.checked = false;
+		coverage_babysitter.checked = false;
 		calcTudo();
 	}
 }
