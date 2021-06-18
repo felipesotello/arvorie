@@ -217,26 +217,21 @@ function calcTudo() {
 
 	if (!coverage_daycare.checked) {
 		daycare_share = parseInt(0, 10);
-		console.log('daycare_share: ' + daycare_share);
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = 1;
-		console.log('daycare_share: ' + daycare_share);
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && coverage_summer_camp.checked) {
 		daycare_share = .3;
-		console.log('daycare_share: ' + daycare_share);
 	} else if (!coverage_nanny.checked && !coverage_babysitter.checked && coverage_summer_camp.checked) {
 		daycare_share = .5;
-		console.log('daycare_share: ' + daycare_share);
 	} else if (coverage_nanny.checked && coverage_babysitter.checked && !coverage_summer_camp.checked) {
 		daycare_share = .5;
-		console.log('daycare_share: ' + daycare_share);
 	} else if (coverage_summer_camp.checked) {
 		daycare_share = .4;
-		console.log('daycare_share: ' + daycare_share);
 	} else {
 		daycare_share = .6;
-		console.log('daycare_share: ' + daycare_share);
 	};
+
+	console.log('daycare_share: ' + daycare_share);
 
 	// contribution_monthly = parents_participating * contribution_pppm
 
@@ -257,7 +252,7 @@ function calcTudo() {
 	if (not_for_profit.checked) {
 		federal_tax_credit = 0;
 	} else {
-		federal_tax_credit = Math.min(daycare_share * parents_participating * contribution_pppm.value * 12 * .25, 150000);
+		federal_tax_credit = parseInt(Math.min(daycare_share * parents_participating * contribution_pppm.value * 12 * .25, 150000), 10);;
 	};
 
 	console.log('federal_tax_credit: ' + federal_tax_credit);
@@ -269,7 +264,7 @@ function calcTudo() {
 	if (not_for_profit.checked) {
 		federal_tax_shield = 0;
 	} else {
-		federal_tax_shield = ((daycare_share * parents_participating * contribution_pppm.value * 12) - federal_tax_credit) * .21;
+		federal_tax_shield = parseInt(((daycare_share * parents_participating * contribution_pppm.value * 12) - federal_tax_credit) * .21, 10);;
 	}
 
 	console.log('federal_tax_shield: ' + federal_tax_shield);
