@@ -226,8 +226,16 @@ function six_to_thirteen() {
 
 // calculation variables
 
-let employeesNy = parseInt(employees_ny.value, 10);
-let contributionPppm = parseInt(contribution_pppm.value, 10);
+function getEmployeesNy() {
+	parseInt(employees_ny.value, 10);
+}
+
+function getContributionPppm() {
+	parseInt(contribution_pppm.value, 10);
+}
+
+let employeesNy = getEmployeesNy();
+let contributionPppm = getContributionPppm()
 
 let employees_total = employeesTotal();
 let parent_usage = parentUsage();
