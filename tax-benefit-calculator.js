@@ -541,7 +541,7 @@ function stateTaxShield() {
 }
 
 function stateTaxSavings() {
-	if (contribution_yearly = 0) {
+	if (contribution_yearly == 0) {
 		return 0;
 	} else {
 		return (state_tax_credit + state_tax_shield) / contribution_yearly;
