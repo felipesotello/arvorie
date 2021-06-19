@@ -639,6 +639,7 @@ function printa() {
 	console.log('parent_usage: ' + parent_usage);
 	console.log('parents_participating: ' + parents_participating);
 	console.log('daycare_share: ' + daycare_share);
+	console.log('contributionPppm: ' + contributionPppm);
 	console.log('contribution_monthly: ' + contribution_monthly);
 	console.log('contribution_yearly: ' + contribution_yearly);
 	console.log('federal_tax_credit: ' + federal_tax_credit);
