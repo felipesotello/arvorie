@@ -581,7 +581,7 @@ function atualiza() {
 	parent_usage = parentUsage();
 	parents_participating = parentsParticipating();
 	daycare_share = daycareShare();
-	contributionPppm = contributionPppm();
+	contributionPppm = getContributionPppm();
 	contribution_monthly = contributionMonthly();
 	contribution_yearly = contributionYearly();
 	federal_tax_credit = federalTaxCredit();
@@ -617,7 +617,7 @@ function printa() {
 	parent_usage = parentUsage();
 	parents_participating = parentsParticipating();
 	daycare_share = daycareShare();
-	contributionPppm = contributionPppm();
+	contributionPppm = getContributionPppm();
 	contribution_monthly = contributionMonthly();
 	contribution_yearly = contributionYearly();
 	federal_tax_credit = federalTaxCredit();
