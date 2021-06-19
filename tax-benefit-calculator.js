@@ -576,6 +576,41 @@ function salaryEquivalentYearly() {
 	return salary_equivalent_pppm * parents_participating * 12;
 }
 
+function atualiza() {
+	employees_total = employeesTotal();
+	parent_usage = parentUsage();
+	parents_participating = parentsParticipating();
+	daycare_share = daycareShare();
+	contribution_monthly = contributionMonthly();
+	contribution_yearly = contributionYearly();
+	federal_tax_credit = federalTaxCredit();
+	federal_tax_shield = federalTaxShield();
+	federal_tax_savings = federalTaxSavings();
+	state_tax_credit_ny = stateTaxCreditNy();
+	state_tax_shield_ny = stateTaxShieldNy();
+	state_tax_credit = stateTaxCredit();
+	state_tax_shield = stateTaxShield();
+	state_tax_savings = stateTaxSavings();
+	tax_benefit = taxBenefit();
+	net_cost_pppm = netCostPppm();
+	net_cost_monthly = netCostMonthly();
+	net_cost_yearly = netCostYearly();
+	salary_equivalent_pppm = salaryEquivalentPppm();
+	salary_equivalent_monthly = salaryEquivalentMonthly();
+	salary_equivalent_yearly = salaryEquivalentYearly();
+}
+
+function calcTudo() {
+	atualiza();
+	tax_benefit_display.innerHTML = tax_benefit;
+	tax_benefit_modal.innerHTML = tax_benefit;
+	contribution_pppm_modal.innerHTML =  contributionPppm;
+	federal_tax_savings_modal.innerHTML =  federal_tax_savings;
+	state_tax_savings_modal.innerHTML =  state_tax_savings;
+	net_cost_pppm_modal.innerHTML =  net_cost_pppm;
+	salary_equivalent_pppm_modal.innerHTML =  salary_equivalent_pppm;
+}
+
 function printa() {
 	employees_total = employeesTotal();
 	parent_usage = parentUsage();
@@ -619,16 +654,6 @@ function printa() {
 	console.log('salary_equivalent_pppm: ' + salary_equivalent_pppm);
 	console.log('salary_equivalent_monthly: ' + salary_equivalent_monthly);
 	console.log('salary_equivalent_yearly: ' + salary_equivalent_yearly);
-}
-
-function calcTudo() {
-	tax_benefit_display.innerHTML = tax_benefit;
-	tax_benefit_modal.innerHTML = tax_benefit;
-	contribution_pppm_modal.innerHTML =  contributionPppm;
-	federal_tax_savings_modal.innerHTML =  federal_tax_savings;
-	state_tax_savings_modal.innerHTML =  state_tax_savings;
-	net_cost_pppm_modal.innerHTML =  net_cost_pppm;
-	salary_equivalent_pppm_modal.innerHTML =  salary_equivalent_pppm;
 }
 
 // interaction experience fixes
