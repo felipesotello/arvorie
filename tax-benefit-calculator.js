@@ -71,14 +71,14 @@ coverage_summer_camp.disabled = true;
 contribution_pppm.value = '50';
 
 contribution_pppm_display.innerHTML = contribution_pppm.value;
-tax_benefit_display.innerHTML = '0';
+tax_benefit_display.innerHTML = '0.00';
 
-tax_benefit_modal.innerHTML =  '0';
+tax_benefit_modal.innerHTML =  '0.00';
 contribution_pppm_modal.innerHTML =  '0';
-federal_tax_savings_modal.innerHTML =  '0';
-state_tax_savings_modal.innerHTML =  '0';
-net_cost_pppm_modal.innerHTML =  '0';
-salary_equivalent_pppm_modal.innerHTML =  '0';
+federal_tax_savings_modal.innerHTML =  '0.00';
+state_tax_savings_modal.innerHTML =  '0.00';
+net_cost_pppm_modal.innerHTML =  '0.00';
+salary_equivalent_pppm_modal.innerHTML =  '0.00';
 
 // interaction triggers
 
