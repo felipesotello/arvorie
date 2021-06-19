@@ -577,11 +577,21 @@ function salaryEquivalentYearly() {
 }
 
 function atualiza() {
+	//
+	employeesNy = getEmployeesNy();
+	employeesSc = getEmployeesSc();
+	employeesMs = getEmployeesMs();
+	employeesNm = getEmployeesNm();
+	employeesKs = getEmployeesKs();
+	employeesRi = getEmployeesRi();
+	employeesOther = getEmployeesOther();
+	contributionPppm = getContributionPppm()
+
+	//
 	employees_total = employeesTotal();
 	parent_usage = parentUsage();
 	parents_participating = parentsParticipating();
 	daycare_share = daycareShare();
-	contributionPppm = getContributionPppm();
 	contribution_monthly = contributionMonthly();
 	contribution_yearly = contributionYearly();
 	federal_tax_credit = federalTaxCredit();
@@ -603,43 +613,33 @@ function atualiza() {
 
 function calcTudo() {
 	atualiza();
-	tax_benefit_display.innerHTML = tax_benefit;
-	tax_benefit_modal.innerHTML = tax_benefit;
+	tax_benefit_display.innerHTML = (tax_benefit * 100).toFixed(2);
+	tax_benefit_modal.innerHTML = (tax_benefit * 100).toFixed(2);
 	contribution_pppm_modal.innerHTML =  contributionPppm;
-	federal_tax_savings_modal.innerHTML =  federal_tax_savings;
-	state_tax_savings_modal.innerHTML =  state_tax_savings;
-	net_cost_pppm_modal.innerHTML =  net_cost_pppm;
-	salary_equivalent_pppm_modal.innerHTML =  salary_equivalent_pppm;
+	federal_tax_savings_modal.innerHTML =  (federal_tax_savings * 100).toFixed(2);
+	state_tax_savings_modal.innerHTML =  (state_tax_savings * 100).toFixed(2);
+	net_cost_pppm_modal.innerHTML =  net_cost_pppm.toFixed(2);
+	salary_equivalent_pppm_modal.innerHTML =  salary_equivalent_pppm.toFixed(2);
 }
 
 function printa() {
-	employees_total = employeesTotal();
-	parent_usage = parentUsage();
-	parents_participating = parentsParticipating();
-	daycare_share = daycareShare();
-	contributionPppm = getContributionPppm();
-	contribution_monthly = contributionMonthly();
-	contribution_yearly = contributionYearly();
-	federal_tax_credit = federalTaxCredit();
-	federal_tax_shield = federalTaxShield();
-	federal_tax_savings = federalTaxSavings();
-	state_tax_credit_ny = stateTaxCreditNy();
-	state_tax_shield_ny = stateTaxShieldNy();
-	state_tax_credit = stateTaxCredit();
-	state_tax_shield = stateTaxShield();
-	state_tax_savings = stateTaxSavings();
-	tax_benefit = taxBenefit();
-	net_cost_pppm = netCostPppm();
-	net_cost_monthly = netCostMonthly();
-	net_cost_yearly = netCostYearly();
-	salary_equivalent_pppm = salaryEquivalentPppm();
-	salary_equivalent_monthly = salaryEquivalentMonthly();
-	salary_equivalent_yearly = salaryEquivalentYearly();
+	atualiza();
+
+	//
+	console.log('employeesNy: ' + employeesNy);
+	console.log('employeesSc: ' + employeesSc);
+	console.log('employeesMs: ' + employeesMs);
+	console.log('employeesNm: ' + employeesNm);
+	console.log('employeesKs: ' + employeesKs);
+	console.log('employeesRi: ' + employeesRi);
+	console.log('employeesOther: ' + employeesOther);
+	console.log('contributionPppm: ' + contributionPppm);
+
+	//
 	console.log('employees_total: ' + employees_total);
 	console.log('parent_usage: ' + parent_usage);
 	console.log('parents_participating: ' + parents_participating);
 	console.log('daycare_share: ' + daycare_share);
-	console.log('contributionPppm: ' + contributionPppm);
 	console.log('contribution_monthly: ' + contribution_monthly);
 	console.log('contribution_yearly: ' + contribution_yearly);
 	console.log('federal_tax_credit: ' + federal_tax_credit);
