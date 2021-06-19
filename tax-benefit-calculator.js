@@ -224,7 +224,7 @@ function six_to_thirteen() {
 	}
 }
 
-// calculation variables
+// parseInt functions
 
 function getEmployeesNy() {
 	return parseInt(employees_ny.value, 10);
@@ -234,8 +234,12 @@ function getContributionPppm() {
 	return parseInt(contribution_pppm.value, 10);
 }
 
+// input variables
+
 let employeesNy = getEmployeesNy();
 let contributionPppm = getContributionPppm()
+
+// calculation variables
 
 let employees_total = employeesTotal();
 let parent_usage = parentUsage();
