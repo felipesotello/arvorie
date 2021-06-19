@@ -533,7 +533,7 @@ function stateTaxShieldOther() {
 
 
 function stateTaxCredit() {
-	return state_tax_credit_ny + state_tax_credit_sc + state_tax_credit_ms + state_tax_credit_nm + state_tax_credit_ks + state_tax_credit_ri + state_tax_credit_other;
+	return state_tax_credit_ny + state_tax_credit_sc + state_tax_credit_ms + state_tax_credit_nm + state_tax_credit_ks + state_tax_credit_ri;
 }
 
 function stateTaxShield() {
