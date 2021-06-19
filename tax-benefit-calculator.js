@@ -227,11 +227,11 @@ function six_to_thirteen() {
 // calculation variables
 
 function getEmployeesNy() {
-	parseInt(employees_ny.value, 10);
+	return parseInt(employees_ny.value, 10);
 }
 
 function getContributionPppm() {
-	parseInt(contribution_pppm.value, 10);
+	return parseInt(contribution_pppm.value, 10);
 }
 
 let employeesNy = getEmployeesNy();
