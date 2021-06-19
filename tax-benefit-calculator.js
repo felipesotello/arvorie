@@ -286,7 +286,6 @@ let state_tax_credit_ms = stateTaxCreditMs();
 let state_tax_credit_nm = stateTaxCreditNm();
 let state_tax_credit_ks = stateTaxCreditKs();
 let state_tax_credit_ri = stateTaxCreditRi();
-let state_tax_credit_other = stateTaxCreditOther();
 let state_tax_shield_ny = stateTaxShieldNy();
 let state_tax_shield_sc = stateTaxShieldSc();
 let state_tax_shield_ms = stateTaxShieldMs();
