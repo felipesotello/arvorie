@@ -280,6 +280,14 @@ input:checked + .toggle-slider:before {
 	transform: translateX(24px);
 }
 
+input:disabled + .toggle-slider {
+	opacity: .25;
+}
+
+input:disabled + .toggle-slider:before {
+	background-color: #f0f0f0;
+}
+
 /* slider - https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
 .slider-container {
