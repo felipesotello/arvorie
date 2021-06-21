@@ -334,31 +334,31 @@ function parentUsage() {
 }
 
 function getUsageNy() {
-	Math.round(employeesNy * parent_usage);
+	return Math.round(employeesNy * parent_usage);
 }
 
 function getUsageSc() {
-	Math.round(employeesSc * parent_usage);
+	return Math.round(employeesSc * parent_usage);
 }
 
 function getUsageMs() {
-	Math.round(employeesMs * parent_usage);
+	return Math.round(employeesMs * parent_usage);
 }
 
 function getUsageNm() {
-	Math.round(employeesNm * parent_usage);
+	return Math.round(employeesNm * parent_usage);
 }
 
 function getUsageKs() {
-	Math.round(employeesKs * parent_usage);
+	return Math.round(employeesKs * parent_usage);
 }
 
 function getUsageRi() {
-	Math.round(employeesRi * parent_usage);
+	return Math.round(employeesRi * parent_usage);
 }
 
 function getUsageOther() {
-	Math.round(employeesOther * parent_usage);
+	return Math.round(employeesOther * parent_usage);
 }
 
 function parentsParticipating() {
@@ -617,7 +617,7 @@ function atualiza() {
 
 function calcTudo() {
 	atualiza();
-	tax_benefit_display.innerHTML = (tax_benefit * 100).toFixed(2);
+	tax_benefit_display.innerHTML = parseInt(tax_benefit * 100);
 	tax_benefit_modal.innerHTML = (tax_benefit * 100).toFixed(2);
 	contribution_pppm_modal.innerHTML =  contributionPppm;
 	federal_tax_savings_modal.innerHTML =  (federal_tax_savings * 100).toFixed(2);
