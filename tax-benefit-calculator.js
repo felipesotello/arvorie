@@ -279,15 +279,13 @@ let contributionPppm = getContributionPppm()
 
 let employees_total = employeesTotal();
 let parent_usage = parentUsage();
-
-let usageNy = Math.round(employeesNy * parent_usage);
-let usageSc = Math.round(employeesSc * parent_usage);
-let usageMs = Math.round(employeesMs * parent_usage);
-let usageNm = Math.round(employeesNm * parent_usage);
-let usageKs = Math.round(employeesKs * parent_usage);
-let usageRi = Math.round(employeesRi * parent_usage);
-let usageOther = Math.round(employeesOther * parent_usage);
-
+let usageNy = getUsageNy();
+let usageSc = getUsageSc();
+let usageMs = getUsageMs();
+let usageNm = getUsageNm();
+let usageKs = getUsageKs();
+let usageRi = getUsageRi();
+let usageOther = getUsageOther();
 let parents_participating = parentsParticipating();
 let daycare_share = daycareShare();
 let contribution_monthly = contributionMonthly();
@@ -333,6 +331,34 @@ function parentUsage() {
 	} else {
 		return 0;
 	}
+}
+
+function getUsageNy() {
+	Math.round(employeesNy * parent_usage);
+}
+
+function getUsageSc() {
+	Math.round(employeesSc * parent_usage);
+}
+
+function getUsageMs() {
+	Math.round(employeesMs * parent_usage);
+}
+
+function getUsageNm() {
+	Math.round(employeesNm * parent_usage);
+}
+
+function getUsageKs() {
+	Math.round(employeesKs * parent_usage);
+}
+
+function getUsageRi() {
+	Math.round(employeesRi * parent_usage);
+}
+
+function getUsageOther() {
+	Math.round(employeesOther * parent_usage);
 }
 
 function parentsParticipating() {
@@ -561,6 +587,13 @@ function atualiza() {
 	//
 	employees_total = employeesTotal();
 	parent_usage = parentUsage();
+	usageNy = getUsageNy();
+	usageSc = getUsageSc();
+	usageMs = getUsageMs();
+	usageNm = getUsageNm();
+	usageKs = getUsageKs();
+	usageRi = getUsageRi();
+	usageOther = getUsageOther();
 	parents_participating = parentsParticipating();
 	daycare_share = daycareShare();
 	contribution_monthly = contributionMonthly();
