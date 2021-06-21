@@ -31,27 +31,6 @@ const state_tax_savings_modal = document.getElementById('state_tax_savings_modal
 const net_cost_pppm_modal = document.getElementById('net_cost_pppm_modal');
 const salary_equivalent_pppm_modal = document.getElementById('salary_equivalent_pppm_modal');
 
-// not used for now
-
-// state_tax_credit_ny
-// state_tax_shield_ny
-
-// contribution_monthly
-// contribution_yearly
-// federal_tax_credit
-// federal_tax_shield
-// federal_payroll_tax
-// state_tax_credit
-// state_tax_shield
-// state_payroll_tax
-// net_cost_monthly
-// net_cost_yearly
-// salary_equivalent_monthly
-// salary_equivalent_yearly
-// parent_usage
-// parents_participating
-// daycare_share
-
 // default values
 
 employees_ny.value = '0';
@@ -83,42 +62,42 @@ salary_equivalent_pppm_modal.innerHTML =  '0';
 // interaction triggers
 
 not_for_profit.onchange = function() {
-	console.log('modo ONG mudou');
+	notForProfit();
 }
 
 employees_ny.oninput = function() {
-	employees();
 	calcTudo();
+	employees_total_display.value = employees_total;
 }
 
 employees_sc.oninput = function() {
-	employees();
 	calcTudo();
+	employees_total_display.value = employees_total;
 }
 
 employees_ms.oninput = function() {
-	employees();
 	calcTudo();
+	employees_total_display.value = employees_total;
 }
 
 employees_nm.oninput = function() {
-	employees();
 	calcTudo();
+	employees_total_display.value = employees_total;
 }
 
 employees_ks.oninput = function() {
-	employees();
 	calcTudo();
+	employees_total_display.value = employees_total;
 }
 
 employees_ri.oninput = function() {
-	employees();
 	calcTudo();
+	employees_total_display.value = employees_total;
 }
 
 employees_other.oninput = function() {
-	employees();
 	calcTudo();
+	employees_total_display.value = employees_total;
 }
 
 coverage_zero_to_five.onchange = function() {
@@ -148,13 +127,13 @@ coverage_summer_camp.onchange = function() {
 }
 
 contribution_pppm.oninput = function() {
-	contribution_pppm_display.innerHTML = this.value;
 	calcTudo();
+	contribution_pppm_display.innerHTML = this.value;
 }
 
 // interaction functions
 
-function notforprofit() {
+function notForProfit() {
 	if (not_for_profit.checked) {
 		employees_ny.disabled = true;
 		employees_sc.disabled = true;
@@ -180,18 +159,6 @@ function notforprofit() {
 		coverage_six_to_thirteen.disabled = false;
 		contribution_pppm.disabled = false;
 	}
-}
-
-function employees() {
-	const a = parseInt(employees_ny.value, 10);
-	const b = parseInt(employees_sc.value, 10);
-	const c = parseInt(employees_ms.value, 10);
-	const d = parseInt(employees_nm.value, 10);
-	const e = parseInt(employees_ks.value, 10);
-	const f = parseInt(employees_ri.value, 10);
-	const g = parseInt(employees_other.value, 10);
-	const h = a + b + c + d + e + f + g;
-	employees_total_display.value = h;
 }
 
 function zero_to_five() {
@@ -317,10 +284,10 @@ let salary_equivalent_pppm = salaryEquivalentPppm();
 let salary_equivalent_monthly = salaryEquivalentMonthly();
 let salary_equivalent_yearly = salaryEquivalentYearly();
 
-// calculation functions (v2)
+// calculation functions
 
 function employeesTotal() {
-	return parseInt(employees_total_display.value, 10);
+	return employeesNy + employeesSc + employeesMs + employeesNm + employeesKs + employeesRi + employeesOther;
 }
 
 function parentUsage() {
@@ -574,7 +541,6 @@ function salaryEquivalentYearly() {
 }
 
 function atualiza() {
-	//
 	employeesNy = getEmployeesNy();
 	employeesSc = getEmployeesSc();
 	employeesMs = getEmployeesMs();
@@ -583,8 +549,6 @@ function atualiza() {
 	employeesRi = getEmployeesRi();
 	employeesOther = getEmployeesOther();
 	contributionPppm = getContributionPppm()
-
-	//
 	employees_total = employeesTotal();
 	parent_usage = parentUsage();
 	usageNy = getUsageNy();
