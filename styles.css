@@ -327,4 +327,16 @@ input:disabled + .toggle-slider:before {
 	cursor: pointer;
 }
 
+.slider:disabled {
+	background-color: #f0f0f0;
+}
+
+.slider:disabled::-webkit-slider-thumb {
+	background-color: #f0f0f0;
+}
+
+.slider:disabled::-moz-range-thumb {
+	background-color: #f0f0f0;
+}
+
 /*  */
