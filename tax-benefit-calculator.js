@@ -199,13 +199,16 @@ function zero_to_five() {
 		coverage_daycare.disabled = false;
 		coverage_nanny.disabled = false;
 		coverage_babysitter.disabled = false;
-	} else {
+	} else if (!coverage_six_to_thirteen.checked) {
 		coverage_daycare.disabled = true;
 		coverage_nanny.disabled = true;
 		coverage_babysitter.disabled = true;
 		coverage_daycare.checked = false;
 		coverage_nanny.checked = false;
 		coverage_babysitter.checked = false;
+	} else {
+		coverage_daycare.disabled = true;
+		coverage_daycare.checked = false;
 	}
 }
 
@@ -214,12 +217,15 @@ function six_to_thirteen() {
 		coverage_nanny.disabled = false;
 		coverage_babysitter.disabled = false;
 		coverage_summer_camp.disabled = false;
-	} else {
+	} else if (!coverage_zero_to_five.checked) {
 		coverage_nanny.disabled = true;
 		coverage_babysitter.disabled = true;
 		coverage_summer_camp.disabled = true;
 		coverage_nanny.checked = false;
 		coverage_babysitter.checked = false;
+		coverage_summer_camp.checked = false;
+	} else {
+		coverage_summer_camp.disabled = true;
 		coverage_summer_camp.checked = false;
 	}
 }
