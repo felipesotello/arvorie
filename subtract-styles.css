@@ -242,14 +242,14 @@ input:disabled + .toggle-slider:before {
 	cursor: pointer;
 }
 
-.slider {
+.slider:disabled {
 	background-color: #f0f0f0;
 }
 
-.slider::-webkit-slider-thumb {
+.slider:disabled::-webkit-slider-thumb {
 	background-color: #f0f0f0;
 }
 
-.slider::-moz-range-thumb {
+.slider:disabled::-moz-range-thumb {
 	background-color: #f0f0f0;
 }
