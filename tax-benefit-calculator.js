@@ -240,7 +240,7 @@ let employeesNm = getEmployeesNm();
 let employeesKs = getEmployeesKs();
 let employeesRi = getEmployeesRi();
 let employeesOther = getEmployeesOther();
-let contributionPppm = getContributionPppm()
+let contributionPppm = getContributionPppm();
 
 // calculation variables
 
@@ -382,12 +382,6 @@ function federalTaxSavings() {
 	}
 }
 
-
-
-// ----------------------------------------------------------------------------------------------------
-// STATE TAX SAVINGS
-// ----------------------------------------------------------------------------------------------------
-
 function stateTaxCreditNy() {
 	if (not_for_profit.checked) {
 		return 0;
@@ -492,10 +486,6 @@ function stateTaxShieldOther() {
 	}
 }
 
-// ----------------------------------------------------------------------------------------------------
-
-
-
 function stateTaxCredit() {
 	return state_tax_credit_ny + state_tax_credit_sc + state_tax_credit_ms + state_tax_credit_nm + state_tax_credit_ks + state_tax_credit_ri;
 }
@@ -566,7 +556,18 @@ function atualiza() {
 	federal_tax_shield = federalTaxShield();
 	federal_tax_savings = federalTaxSavings();
 	state_tax_credit_ny = stateTaxCreditNy();
+	state_tax_credit_sc = stateTaxCreditSc();
+	state_tax_credit_ms = stateTaxCreditMs();
+	state_tax_credit_nm = stateTaxCreditNm();
+	state_tax_credit_ks = stateTaxCreditKs();
+	state_tax_credit_ri = stateTaxCreditRi();
 	state_tax_shield_ny = stateTaxShieldNy();
+	state_tax_shield_sc = stateTaxShieldSc();
+	state_tax_shield_ms = stateTaxShieldMs();
+	state_tax_shield_nm = stateTaxShieldNm();
+	state_tax_shield_ks = stateTaxShieldKs();
+	state_tax_shield_ri = stateTaxShieldRi();
+	state_tax_shield_other = stateTaxShieldOther();
 	state_tax_credit = stateTaxCredit();
 	state_tax_shield = stateTaxShield();
 	state_tax_savings = stateTaxSavings();
@@ -592,8 +593,6 @@ function calcTudo() {
 
 function printa() {
 	atualiza();
-
-	//
 	console.log('employeesNy: ' + employeesNy);
 	console.log('employeesSc: ' + employeesSc);
 	console.log('employeesMs: ' + employeesMs);
@@ -602,10 +601,15 @@ function printa() {
 	console.log('employeesRi: ' + employeesRi);
 	console.log('employeesOther: ' + employeesOther);
 	console.log('contributionPppm: ' + contributionPppm);
-
-	//
 	console.log('employees_total: ' + employees_total);
 	console.log('parent_usage: ' + parent_usage);
+	console.log('usageNy: ' + usageNy);
+	console.log('usageSc: ' + usageSc);
+	console.log('usageMs: ' + usageMs);
+	console.log('usageNm: ' + usageNm);
+	console.log('usageKs: ' + usageKs);
+	console.log('usageRi: ' + usageRi);
+	console.log('usageOther: ' + usageOther);
 	console.log('parents_participating: ' + parents_participating);
 	console.log('daycare_share: ' + daycare_share);
 	console.log('contribution_monthly: ' + contribution_monthly);
@@ -613,8 +617,6 @@ function printa() {
 	console.log('federal_tax_credit: ' + federal_tax_credit);
 	console.log('federal_tax_shield: ' + federal_tax_shield);
 	console.log('federal_tax_savings: ' + federal_tax_savings);
-	console.log('state_tax_credit_ny: ' + state_tax_credit_ny);
-	console.log('state_tax_shield_ny: ' + state_tax_shield_ny);
 	console.log('state_tax_credit: ' + state_tax_credit);
 	console.log('state_tax_shield: ' + state_tax_shield);
 	console.log('state_tax_savings: ' + state_tax_savings);
