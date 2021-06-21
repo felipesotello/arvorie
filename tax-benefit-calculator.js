@@ -273,6 +273,15 @@ let contributionPppm = getContributionPppm()
 
 let employees_total = employeesTotal();
 let parent_usage = parentUsage();
+
+let usageNy = Math.round(employeesNy * parent_usage);
+let usageSc = Math.round(employeesSc * parent_usage);
+let usageMs = Math.round(employeesMs * parent_usage);
+let usageNm = Math.round(employeesNm * parent_usage);
+let usageKs = Math.round(employeesKs * parent_usage);
+let usageRi = Math.round(employeesRi * parent_usage);
+let usageOther = Math.round(employeesOther * parent_usage);
+
 let parents_participating = parentsParticipating();
 let daycare_share = daycareShare();
 let contribution_monthly = contributionMonthly();
@@ -321,7 +330,7 @@ function parentUsage() {
 }
 
 function parentsParticipating() {
-	return parent_usage * employees_total;
+	return usageNy + usageSc + usageMs + usageNm + usageKs + usageRi + usageOther;
 }
 
 function daycareShare() {
@@ -384,7 +393,7 @@ function stateTaxCreditNy() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * employeesNy * parent_usage * contributionPppm * 12 * .25, 150000);
+		return Math.min(daycare_share * usageNy * contributionPppm * 12 * .25, 150000);
 	}
 }
 
@@ -392,139 +401,95 @@ function stateTaxShieldNy() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return (daycare_share * employeesNy * parent_usage * contributionPppm * 12 - state_tax_credit_ny) * .071;
+		return (daycare_share * usageNy * contributionPppm * 12 - state_tax_credit_ny) * .071;
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// MIN(daycare_share*employees_sc*parents_usage*contribution_pppm*12*0,5;daycare_share*employees_sc*parents_usage*3000))
 
 function stateTaxCreditSc() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * employeesSc * parent_usage * contributionPppm * 12 * .5, daycare_share * employeesSc * parent_usage * 3000);
+		return Math.min(daycare_share * usageSc * contributionPppm * 12 * .5, daycare_share * usageSc * 3000);
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// (daycare_share*employees_sc*parents_usage*contribution_pppm*12-state_tax_credit_sc)*0,05)
 
 function stateTaxShieldSc() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return (daycare_share * employeesSc * parent_usage * contributionPppm * 12 - state_tax_credit_sc) * .05;
+		return (daycare_share * usageSc * contributionPppm * 12 - state_tax_credit_sc) * .05;
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// daycare_share*employees_mi*parents_usage*contribution_pppm*12*0,5)
 
 function stateTaxCreditMs() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return daycare_share * employeesMs * parent_usage * contributionPppm * 12 * .5;
+		return daycare_share * usageMs * contributionPppm * 12 * .5;
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// (daycare_share*employees_mi*parents_usage*contribution_pppm*12-state_tax_credit_ms)*0,05)
 
 function stateTaxShieldMs() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return (daycare_share * employeesMs * parent_usage * contributionPppm * 12 - state_tax_credit_ms) * .05;
+		return (daycare_share * usageMs * contributionPppm * 12 - state_tax_credit_ms) * .05;
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// MIN(daycare_share*employees_nm*parents_usage*contribution_pppm*12*0,3;30000))
 
 function stateTaxCreditNm() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * employeesNm * parent_usage * contributionPppm * 12 * .3, 30000);
+		return Math.min(daycare_share * usageNm * contributionPppm * 12 * .3, 30000);
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// (daycare_share*employees_nm*parents_usage*contribution_pppm*12-state_tax_credit_nm)*0,076)
 
 function stateTaxShieldNm() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return (daycare_share * employeesNm * parent_usage * contributionPppm * 12 - state_tax_credit_nm) * .076;
+		return (daycare_share * usageNm * contributionPppm * 12 - state_tax_credit_nm) * .076;
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// MIN(daycare_share*employees_ks*parents_usage*contribution_pppm*12*0,3;30000))
 
 function stateTaxCreditKs() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * employeesKs * parent_usage * contributionPppm * 12 * .3, 30000);
+		return Math.min(daycare_share * usageKs * contributionPppm * 12 * .3, 30000);
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// (daycare_share*employees_ks*parents_usage*contribution_pppm*12-state_tax_credit_ks)*0,07)
 
 function stateTaxShieldKs() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return (daycare_share * employeesKs * parent_usage * contributionPppm * 12 - state_tax_credit_ks) * .07;
+		return (daycare_share * usageKs * contributionPppm * 12 - state_tax_credit_ks) * .07;
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// MIN(daycare_share*employees_ri*parents_usage*contribution_pppm*12*0,3;30000))
 
 function stateTaxCreditRi() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * employeesRi * parent_usage * contributionPppm * 12 * .3, 30000);
+		return Math.min(daycare_share * usageRi * contributionPppm * 12 * .3, 30000);
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// (daycare_share*employees_ri*parents_usage*contribution_pppm*12-state_tax_credit_ri)*0,07)
 
 function stateTaxShieldRi() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return (daycare_share * employeesRi * parent_usage * contributionPppm * 12 - state_tax_credit_ri) * .07;
+		return (daycare_share * usageRi * contributionPppm * 12 - state_tax_credit_ri) * .07;
 	}
 }
-
-// IF(not_for_profit=1;
-// 0;
-// (daycare_share*employees_other*parents_usage*contribution_pppm*12)*0,05)
 
 function stateTaxShieldOther() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return (daycare_share * employeesOther * parent_usage * contributionPppm * 12) * .05;
+		return (daycare_share * usageOther * contributionPppm * 12) * .05;
 	}
 }
 
