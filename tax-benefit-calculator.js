@@ -618,12 +618,12 @@ function atualiza() {
 function calcTudo() {
 	atualiza();
 	tax_benefit_display.innerHTML = parseInt(tax_benefit * 100);
-	tax_benefit_modal.innerHTML = (tax_benefit * 100).toFixed(2);
+	tax_benefit_modal.innerHTML = parseInt(tax_benefit * 100);
 	contribution_pppm_modal.innerHTML =  contributionPppm;
-	federal_tax_savings_modal.innerHTML =  (federal_tax_savings * 100).toFixed(2);
-	state_tax_savings_modal.innerHTML =  (state_tax_savings * 100).toFixed(2);
-	net_cost_pppm_modal.innerHTML =  net_cost_pppm.toFixed(2);
-	salary_equivalent_pppm_modal.innerHTML =  salary_equivalent_pppm.toFixed(2);
+	federal_tax_savings_modal.innerHTML =  parseInt(federal_tax_savings * 100);
+	state_tax_savings_modal.innerHTML =  parseInt(state_tax_savings * 100);
+	net_cost_pppm_modal.innerHTML =  parseInt(net_cost_pppm);
+	salary_equivalent_pppm_modal.innerHTML =  parseInt(salary_equivalent_pppm);
 }
 
 function printa() {
