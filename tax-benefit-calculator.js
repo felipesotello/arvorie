@@ -508,7 +508,7 @@ function taxBenefit() {
 }
 
 function netCostPppm() {
-	return contributionPppm * (1 - (federal_tax_savings + state_tax_savings));
+	return contributionPppm * (1 - (federal_tax_savings.toFixed(2) + state_tax_savings.toFixed(2)));
 }
 
 function netCostMonthly() {
