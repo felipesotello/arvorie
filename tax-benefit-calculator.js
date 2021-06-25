@@ -504,7 +504,7 @@ function stateTaxSavings() {
 }
 
 function taxBenefit() {
-	return parseInt(federal_tax_savings) + parseInt(state_tax_savings);
+	return parseInt(federal_tax_savings * 100) + parseInt(state_tax_savings * 100);
 }
 
 function netCostPppm() {
