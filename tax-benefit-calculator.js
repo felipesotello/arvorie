@@ -48,6 +48,7 @@ coverage_babysitter.disabled = true;
 coverage_summer_camp.disabled = true;
 
 contribution_pppm.value = '50';
+contribution_pppm.step = '10';
 
 contribution_pppm_display.innerHTML = contribution_pppm.value;
 tax_benefit_display.innerHTML = '0';
