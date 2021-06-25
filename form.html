@@ -1,63 +1,61 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<html>
-<head>
-	<title>Tax Benefit Calculator | Arvorie</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="tbc-tbc-section">
-	<div class="tbc-tbc-container">
-
-<form id="" name="" data-name="" class="">
-	<div class="tbc-tbc-section-title">
+<form action="" id="" name="" data-name="" class="tbc-">
+	<div class="tbc-section-title">
 		<div>Company Profile</div>
 		<div class="tbc-teste-container">
-			<label class="tbc-teste">
-				<input type="checkbox" checked>
+
+			<div class="tbc-toggle-group">
+				<label class="tbc-toggle">
+					<input id="not_for_profit" type="checkbox">
+					<span class="tbc-toggle-slider"></span>
+				</label>
+				<label for="" class="tbc-content-label">Not-for-profit</label>
+			</div>
+
+			<!-- <label class="tbc-teste">
+				<input id="not_for_profit" type="checkbox" checked>
 				<span class="tbc-teste-slider">
-					<span class="tbc-off">non-profit</span>
-					<span class="tbc-on">for profit</span>
+					<span class="tbc-off">not-for-profit</span>
+					<span class="tbc-on">for-profit</span>
 				</span>
-			</label>
+			</label> -->
+
 		</div>
 	</div>
 	<div class="tbc-section-container">
 		<div class="tbc-section-group">
-			<div class="tbc-content-title tbc-mb20">employees in</div>
+			<div class="tbc-content-title tbc-mb20">employees in the u.s.</div>
 			<div class="tbc-section-grid">
 				<div>
 					<div class="tbc-content-label tbc-mb4">New York</div>
-					<input id="NY" type="number" class="tbc-input-text" value="0" onfocus="if (this.value == 0) { this.value = ''; }" oninput="soma()" onblur="if (this.value == '') { this.value = 0; }">
+					<input id="employees_ny" type="number" class="tbc-input-text" oninput="employees()">
 				</div>
 				<div>
 					<div class="tbc-content-label tbc-mb4">South Carolina</div>
-					<input id="SC" type="number" class="tbc-input-text" value="0" onfocus="if (this.value == 0) { this.value = ''; }" oninput="soma()" onblur="if (this.value == '') { this.value = 0; }">
+					<input id="employees_sc" type="number" class="tbc-input-text" oninput="employees()">
 				</div>
 				<div>
 					<div class="tbc-content-label tbc-mb8">Mississipi</div>
-					<input id="MS" type="number" class="tbc-input-text" value="0" onfocus="if (this.value == 0) { this.value = ''; }" oninput="soma()" onblur="if (this.value == '') { this.value = 0; }">
+					<input id="employees_ms" type="number" class="tbc-input-text" oninput="employees()">
 				</div>
 				<div>
 					<div class="tbc-content-label tbc-mb8">New Mexico</div>
-					<input id="NM" type="number" class="tbc-input-text" value="0" onfocus="if (this.value == 0) { this.value = ''; }" oninput="soma()" onblur="if (this.value == '') { this.value = 0; }">
+					<input id="employees_nm" type="number" class="tbc-input-text" oninput="employees()">
 				</div>
 				<div>
 					<div class="tbc-content-label tbc-mb12">Kansas</div>
-					<input id="KS" type="number" class="tbc-input-text" value="0" onfocus="if (this.value == 0) { this.value = ''; }" oninput="soma()" onblur="if (this.value == '') { this.value = 0; }">
+					<input id="employees_ks" type="number" class="tbc-input-text" oninput="employees()">
 				</div>
 				<div>
 					<div class="tbc-content-label tbc-mb12">Rhode Island</div>
-					<input id="RI" type="number" class="tbc-input-text" value="0" onfocus="if (this.value == 0) { this.value = ''; }" oninput="soma()" onblur="if (this.value == '') { this.value = 0; }">
+					<input id="employees_ri" type="number" class="tbc-input-text" oninput="employees()">
 				</div>
 				<div>
 					<div class="tbc-content-label tbc-mb4">Other States</div>
-					<input id="OS" type="number" class="tbc-input-text" value="0" onfocus="if (this.value == 0) { this.value = ''; }" oninput="soma()" onblur="if (this.value == '') { this.value = 0; }">
+					<input id="employees_other" type="number" class="tbc-input-text" oninput="employees()">
 				</div>
 				<div>
-					<div class="tbc-content-total tbc-mb4">Total in the U.S.</div>
-					<input id="US" type="number" class="tbc-input-text" value="0" disabled>
+					<div class="tbc-content-total tbc-mb4">Total</div>
+					<input id="employees_total_display" type="number" class="tbc-input-text" disabled>
 				</div>
 			</div>
 		</div>
@@ -67,18 +65,18 @@
 	</div>
 	<div class="tbc-section-container">
 		<div class="tbc-section-group bb1">
-			<div class="tbc-content-title tbc-mb20">children age</div>
+			<div class="tbc-content-title tbc-mb20">age of children</div>
 			<div class="tbc-section-grid">
 				<div class="tbc-toggle-group">
 					<label class="tbc-toggle">
-						<input type="checkbox">
+						<input id="coverage_zero_to_five" type="checkbox">
 						<span class="tbc-toggle-slider"></span>
 					</label>
 					<label for="" class="tbc-content-label">0-5 years</label>
 				</div>
 				<div class="tbc-toggle-group">
 					<label class="tbc-toggle">
-						<input type="checkbox">
+						<input id="coverage_six_to_thirteen" type="checkbox">
 						<span class="tbc-toggle-slider"></span>
 					</label>
 					<label for="" class="tbc-content-label">6-13 years</label>
@@ -90,28 +88,28 @@
 			<div class="tbc-section-grid">
 				<div class="tbc-toggle-group">
 					<label class="tbc-toggle">
-						<input type="checkbox">
+						<input id="coverage_daycare" type="checkbox" disabled>
 						<span class="tbc-toggle-slider"></span>
 					</label>
 					<label for="" class="tbc-content-label">Daycare</label>
 				</div>
 				<div class="tbc-toggle-group">
 					<label class="tbc-toggle">
-						<input type="checkbox">
+						<input id="coverage_nanny" type="checkbox" disabled>
 						<span class="tbc-toggle-slider"></span>
 					</label>
 					<label for="" class="tbc-content-label">Nanny</label>
 				</div>
 				<div class="tbc-toggle-group">
 					<label class="tbc-toggle">
-						<input type="checkbox">
+						<input id="coverage_babysitter" type="checkbox" disabled>
 						<span class="tbc-toggle-slider"></span>
 					</label>
 					<label for="" class="tbc-content-label">Babysitter</label>
 				</div>
 				<div class="tbc-toggle-group">
 					<label class="tbc-toggle">
-						<input type="checkbox">
+						<input id="coverage_summer_camp" type="checkbox" disabled>
 						<span class="tbc-toggle-slider"></span>
 					</label>
 					<label for="" class="tbc-content-label">Summer Camp</label>
@@ -123,37 +121,18 @@
 		<div>Employer Contribution</div>
 	</div>
 	<div class="tbc-section-container">
-		<div class="tbc-section-group bb1">
+		<div class="tbc-section-group">
 			<div class="tbc-slider-group tbc-mb20">
 				<div class="tbc-content-title">per parent per month</div>
-				<div class="tbc-content-display">$ <span id="pppm"></span></div>
+				<div class="tbc-content-display">$ <span id="contribution_pppm_display">contribution_pppm_display</span></div>
 			</div>
 			<div class="tbc-slider-container tbc-mb12">
-				<input id="pppm-range" type="range" min="50" max="500" value="50" class="tbc-slider">
+				<input id="contribution_pppm" type="range" min="50" max="500" class="tbc-slider">
 			</div>
 			<div class="tbc-caption-container">
 				<div>$ 50</div>
 				<div>$ 500</div>
 			</div>
 		</div>
-		<div class="tbc-section-group">
-			<div class="tbc-slider-group tbc-mb20">
-				<div class="tbc-content-title">share spent with daycare</div>
-				<div class="tbc-content-display"><span id="sswd"></span>%</div>
-			</div>
-			<div class="tbc-slider-container tbc-mb12">
-				<input id="sswd-range" type="range" min="0" max="100" value="0" class="tbc-slider">
-			</div>
-			<div class="tbc-caption-container">
-				<div>0%</div>
-				<div>100%</div>
-			</div>
-		</div>
-	</div>		
-</form>
-
 	</div>
-</div>
-<script type="text/javascript" src="tax-benefit-calculator.js"></script>
-</body>
-</html>
+</form>

@@ -583,8 +583,8 @@ function atualiza() {
 
 function calcTudo() {
 	atualiza();
-	tax_benefit_display.innerHTML = parseInt(tax_benefit * 100);
-	tax_benefit_modal.innerHTML = parseInt(tax_benefit * 100);
+	tax_benefit_display.innerHTML = tax_benefit;
+	tax_benefit_modal.innerHTML = tax_benefit;
 	contribution_pppm_modal.innerHTML =  contributionPppm;
 	federal_tax_savings_modal.innerHTML =  parseInt(federal_tax_savings * 100);
 	state_tax_savings_modal.innerHTML =  parseInt(state_tax_savings * 100);
