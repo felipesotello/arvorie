@@ -580,7 +580,6 @@ function atualiza() {
 	salary_equivalent_monthly = salaryEquivalentMonthly();
 	salary_equivalent_yearly = salaryEquivalentYearly();
 
-	document.getElementById('hubspot_page_uri').value = window.location;
 	document.getElementById('hubspot_employees_ny').value = employeesNy;
 	document.getElementById('hubspot_employees_sc').value = employeesSc;
 	document.getElementById('hubspot_employees_ms').value = employeesMs;
