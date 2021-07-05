@@ -588,7 +588,7 @@ function atualiza() {
 	// document.getElementById('hubspot_employees_ri').value = employeesRi;
 	// document.getElementById('hubspot_employees_other').value = employeesOther;
 	// document.getElementById('hubspot_employees_total').value = employees_total;
-	document.getElementById('hubspot_coverage_zero_to_five_cb').value = coverage_zero_to_five.checked;
+	// document.getElementById('hubspot_coverage_zero_to_five_cb').value = coverage_zero_to_five.checked;
 	// document.getElementById('hubspot_coverage_six_to_thirteen').value = coverage_six_to_thirteen.checked;
 	// document.getElementById('hubspot_coverage_daycare').value = coverage_daycare.checked;
 	// document.getElementById('hubspot_coverage_nanny').value = coverage_nanny.checked;
