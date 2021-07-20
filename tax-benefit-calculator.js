@@ -201,31 +201,59 @@ function six_to_thirteen() {
 // parseInt functions
 
 function getEmployeesNy() {
-	return parseInt(employees_ny.value, 10);
+	if (employees_ny.value == '') {
+		return 0;
+	} else {
+		return parseInt(employees_ny.value, 10);
+	}
 }
 
 function getEmployeesSc() {
-	return parseInt(employees_sc.value, 10);
+	if (employees_sc.value == '') {
+		return 0;
+	} else {
+		return parseInt(employees_sc.value, 10);
+	}
 }
 
 function getEmployeesMs() {
-	return parseInt(employees_ms.value, 10);
+	if (employees_ms.value == '') {
+		return 0;
+	} else {
+		return parseInt(employees_ms.value, 10);
+	}
 }
 
 function getEmployeesNm() {
-	return parseInt(employees_nm.value, 10);
+	if (employees_nm.value == '') {
+		return 0;
+	} else {
+		return parseInt(employees_nm.value, 10);
+	}
 }
 
 function getEmployeesKs() {
-	return parseInt(employees_ks.value, 10);
+	if (employees_ks.value == '') {
+		return 0;
+	} else {
+		return parseInt(employees_ks.value, 10);
+	}
 }
 
 function getEmployeesRi() {
-	return parseInt(employees_ri.value, 10);
+	if (employees_ri.value == '') {
+		return 0;
+	} else {
+		return parseInt(employees_ri.value, 10);
+	}
 }
 
 function getEmployeesOther() {
-	return parseInt(employees_other.value, 10);
+	if (employees_other.value == '') {
+		return 0;
+	} else {
+		return parseInt(employees_other.value, 10);
+	}
 }
 
 function getContributionPppm() {
