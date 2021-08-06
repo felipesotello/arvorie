@@ -42,9 +42,12 @@ employees_ri.value = '0';
 employees_other.value = '0';
 employees_total_display.value = '0';
 
-coverage_daycare.disabled = true;
-coverage_nanny.disabled = true;
-coverage_babysitter.disabled = true;
+coverage_zero_to_five.checked = true;
+coverage_daycare.checked = true;
+
+coverage_daycare.disabled = false;
+coverage_nanny.disabled = false;
+coverage_babysitter.disabled = false;
 coverage_summer_camp.disabled = true;
 
 contribution_pppm.value = '50';
@@ -167,6 +170,7 @@ function zero_to_five() {
 		coverage_daycare.disabled = false;
 		coverage_nanny.disabled = false;
 		coverage_babysitter.disabled = false;
+		coverage_daycare.checked = true;
 	} else if (!coverage_six_to_thirteen.checked) {
 		coverage_daycare.disabled = true;
 		coverage_nanny.disabled = true;
