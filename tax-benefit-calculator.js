@@ -419,7 +419,7 @@ function stateTaxCreditNy() {
 	if (not_for_profit.checked) {
 		return 0;
 	} else {
-		return Math.min(daycare_share * usageNy * contributionPppm * 12 * .25, 150000);
+		return Math.min(daycare_share * usageNy * contributionPppm * 12 * .5, 500000);
 	}
 }
 
